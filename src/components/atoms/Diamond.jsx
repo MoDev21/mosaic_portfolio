@@ -8,7 +8,7 @@ export default function Diamond({ className = '', imageSrc, ...props }) {
 
   return (
     <div className="diamond" {...props}>
-        <img src={imageSrc} width="400" height="300" alt="alt text" alt={props.alt} />
+        <img src={imageSrc} width="700" height="600" alt="alt text" alt={props.alt} />
     </div>
   );
 }

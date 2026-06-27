@@ -63,6 +63,7 @@
   place-content: center;
   place-items: center;
   flex-grow: 1;
+  margin: 50px 0px;
 
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
@@ -264,3 +265,12 @@ nav ul {
   min-width: 0;
 }
 
+.hero-section-content {
+  background-color: #44449b61;
+  padding: 300px 400px;
+  border-radius: 50px;
+  position: absolute;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  border: 2px #ffffff4b solid;
+}
