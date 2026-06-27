@@ -1,14 +1,20 @@
 import { useState } from 'react'
+import ReactDOM from 'react-dom/client'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
-
 import mosaiclogo from './assets/mosaic_logo.png'
 import './App.css'
+import './css/embla.css'
+import Diamond from './components/atoms/Diamond'
 import Button from './components/atoms/Button'
 import CountButton from './components/atoms/CountButton'
 import LinkButton from './components/atoms/LinkButton'
 import Navbar from './components/organisme/Navbar'
+import DiamondMosaic from './components/molecules/DiamondMosaic'
+import { EmblaCarousel as Carousel } from './components/organisme/Carousel'
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -66,40 +72,23 @@ function App() {
     },
   ]
 
-  const diaporamaImages = [
-    {
-      src: "src\\assets\\BingWallpaper-2020-02-07.jpg",
-      alt: "Hero Image",
-      className: "base",
-      width: 170,
-      height: 179
-    },
-    {
-      src: "src\\assets\\blue-dark-blue-dark-green-green-1064731.jpg",
-      alt: "React Logo",
-      className: "framework",
-      width: 750,
-      height: 500
-    },
-    {
-      src: "src\\assets\\photo-of-starry-night-1421903.jpg",
-      alt: "Vite Logo",
-      className: "vite",
-      width: 170,
-      height: 179
-    }
-  ] 
+
+
+
+
 
   return (
     <>
       <Navbar />
       <section id="center">
-        <div className="hero">
+        {/* <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
+        </div> */}
+        <DiamondMosaic />
         <div>
+          
           <h1>Get started</h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
@@ -108,11 +97,12 @@ function App() {
         <CountButton count={count} setCount={setCount} />
       </section>
       <section>
-        <div className="diaporama">
+        {/* <div className="diaporama">
           {diaporamaImages.map((image, index) => (
             <img key={index} src={image.src} alt={image.alt} className={image.className} width={image.width} height={image.height} />
           ))}
-        </div>
+        </div> */}
+        <Carousel />
       </section>
 
       {/* <div className="ticks"></div> */}
