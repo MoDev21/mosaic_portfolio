@@ -162,6 +162,11 @@
   }
 }
 
+
+section{
+  margin: 230px 0px;
+}
+
 /* .ticks {
   position: relative;
   width: 100%;
@@ -267,10 +272,57 @@ nav ul {
 
 .hero-section-content {
   background-color: #44449b61;
-  padding: 300px 400px;
+  padding: 64px 64px;
   border-radius: 50px;
+  width: 800px;
+  height: 600px;
   position: absolute;
   z-index: 2;
   backdrop-filter: blur(10px);
   border: 2px #ffffff4b solid;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+
+.home__about_me_modalbox{
+  background-color: #3d3d6959;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  border-radius: 25px;
+  .home__about_me_modalbox_image{
+    border-radius: 25px;
+    width: 291px;
+    height: 300px;
+    overflow: hidden;
+    padding: 200px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    img{
+      height: 700px;
+    }
+
+  }
+
+  .home__about_me_modalbox_info{
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    h2{
+      font-size: 4rem;
+    }
+    button
+  }
 }

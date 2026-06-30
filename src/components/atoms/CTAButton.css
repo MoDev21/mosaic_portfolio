@@ -1,0 +1,10 @@
+button{
+    background: #090979;
+    background: linear-gradient(90deg, rgba(9, 9, 121, 0.59) 46%, rgba(255, 0, 60, 0.45) 100%);
+    border: 2px #acb9c573 solid;
+    padding: 20px 30px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: auto;
+}

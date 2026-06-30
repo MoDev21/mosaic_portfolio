@@ -8,11 +8,17 @@ import './App.css'
 import './css/embla.css'
 import Diamond from './components/atoms/Diamond'
 import Button from './components/atoms/Button'
+import CTAButton from './components/atoms/CTAButton'
 import CountButton from './components/atoms/CountButton'
 import LinkButton from './components/atoms/LinkButton'
 import Navbar from './components/organisme/Navbar'
 import DiamondMosaic from './components/molecules/DiamondMosaic'
 import { EmblaCarousel as Carousel } from './components/organisme/Carousel'
+// import Christianity from './assets/images/svg/christianity-prayer-svgrepo-com.svg'
+import Sports from './assets/images/svg/sports-basketball.svg'
+import Music from './assets/images/svg/music-notes-svgrepo-com.svg'
+import Motherboard from './assets/images/svg/motherboard.svg'
+import VideoGames from './assets/images/svg/video-games-game-controller.svg'
 
 
 
@@ -92,17 +98,34 @@ function App() {
 
       </section>
       <section>
-        {/* <div className="diaporama">
-          {diaporamaImages.map((image, index) => (
-            <img key={index} src={image.src} alt={image.alt} className={image.className} width={image.width} height={image.height} />
-          ))}
-        </div> */}
         <Carousel />
       </section>
 
       {/* <div className="ticks"></div> */}
-
-      <section id="next-steps">
+      <section className="home__about_me">
+        <div className="home__about_me_modalbox">
+          <div className="home__about_me_modalbox_image">
+            <img src="src/assets/images/4139e2805927715ce5873dc3d84.png" alt="" />
+          </div>
+          <div className="home__about_me_modalbox_info">
+            <h2>About me</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt diam ac turpis tristique, ac sagittis justo tristique. Nullam cursus, 
+              ligula vitae consectetur vulputate, ligula ipsum placerat arcu, ut hendrerit orci augue non purus. 
+              Fusce vel ex euismod, tempor sapien ut, varius nunc. 
+            </p>
+            <CTAButton name="more about me"/>
+          </div>
+        </div>
+        <div className="hobbies_icons">
+          {/* <Christianity />
+          <Music />
+          <VideoGames />
+          <Motherboard />
+          <Sports /> */}
+        </div>
+      </section>
+      <footer id="next-steps">
         <div id="docs">
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#documentation-icon"></use>
@@ -127,9 +150,9 @@ function App() {
             ))}
           </ul>
         </div>
-      </section>
-{/* 
-      <div className="ticks"></div> */}
+      </footer>
+
+      {/* <div className="ticks"></div> */}
       <section id="spacer"></section>
     </>
   )
