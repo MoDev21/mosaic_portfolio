@@ -85,15 +85,19 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      
       <section id="center">
         <DiamondMosaic />
-        <div className='hero-section-content'>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-          <CountButton count={count} setCount={setCount} />
+        <div className='hero_section__container'>
+          <Navbar />
+          <div className="hero-section-content">
+            <h1>Get started</h1>
+            <p>
+              Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+            </p>
+            <CountButton count={count} setCount={setCount} />
+          </div>
+
         </div>
 
       </section>

@@ -30,7 +30,7 @@ export default function Navbar(){
         />
         <ul>
             {navigationLinks.map((link, index) => (
-                <LinkButton key={index} link={link} />
+                <LinkButton key={index} link={link}  active={link.label === "Home" ? true : false}/>
             ))}
         </ul>
     </nav>
