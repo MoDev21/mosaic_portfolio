@@ -63,7 +63,8 @@
   place-content: center;
   place-items: center;
   flex-grow: 1;
-  margin: 50px 0px;
+  margin: 10dvh 0px;
+
 
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
@@ -252,70 +253,3 @@ nav ul {
   min-width: 0;
 }
 
-.hero_section__container {
-    background-color: #44449b61;
-    padding: 20px 36px;
-    border-radius: 50px;
-    width: 1200px;
-    height: 750px;
-    position: absolute;
-    z-index: 2;
-    backdrop-filter: blur(10px);
-    border: 2px #7777774b solid;
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    .hero-section-content {
-      display: flex;
-      align-content: center;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: nowrap;
-      gap: 20px;
-      margin-bottom: 20%;
-    }
-}
-
-
-.home__about_me_modalbox{
-  background-color: #3d3d6959;
-  padding: 30px 50px;
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  border-radius: 25px;
-      border: 2px #7777774b solid;
-  .home__about_me_modalbox_image{
-    border-radius: 25px;
-    width: 291px;
-    height: 300px;
-    overflow: hidden;
-    padding: 200px;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    img{
-      height: 700px;
-    }
-
-  }
-
-  .home__about_me_modalbox_info{
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    justify-content: center;
-    align-items: center;
-    h2{
-      font-size: 4rem;
-    }
-    button
-  }
-}

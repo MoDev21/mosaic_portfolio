@@ -5,6 +5,7 @@ import viteLogo from '../../assets/vite.svg'
 import heroImg from '../../assets/hero.png'
 import mosaiclogo from '../../assets/mosaic_logo.png'
 import '../../App.css'
+import './Home.css'
 import '../../css/embla.css'
 import Diamond from '../../components/atoms/Diamond'
 import Button from '../../components/atoms/Button'
@@ -84,12 +85,14 @@ export default function Home() {
   return (
     <>
       <section id="center">
-        <DiamondMosaic />
+        
         <div className='hero_section__container'>
+          <DiamondMosaic />
+          <div className="blur-background"></div>
           <Navbar />
           <div className="hero-section-content">
             <h1>Get started</h1>
-            <p>
+            <p> 
               Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
             </p>
             <CountButton count={count} setCount={setCount} />

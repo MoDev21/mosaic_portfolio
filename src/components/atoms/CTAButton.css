@@ -1,4 +1,4 @@
-button{
+.CTAButton {
     background: #090979;
     background: linear-gradient(90deg, rgba(9, 9, 121, 0.59) 46%, rgba(255, 0, 60, 0.45) 100%);
     border: 2px #acb9c573 solid;

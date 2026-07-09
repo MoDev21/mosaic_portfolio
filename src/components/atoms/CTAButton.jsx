@@ -4,7 +4,7 @@ import './CTAButton.css'
 
 export default function CTAButton({ ...props }) {
     return (
-        <button>
+        <button className="CTAButton">
             {props.name}
         </button>
     )

@@ -6,4 +6,7 @@
     gap: 8px;
     transform: rotate(45deg);
     padding: 0px;
+    z-index: -2;
+    position: absolute;
+    scale: 2;
 }
