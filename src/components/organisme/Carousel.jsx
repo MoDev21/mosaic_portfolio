@@ -42,13 +42,13 @@ export function EmblaCarousel() {
 
     return (
         <div className="Carousel">
-            <h1>Portfolio</h1>
+            <h2 style={{ fontSize: '3rem' }}>Portfolio</h2>
             <div className="Carousel__viewport">
                 <div className="Carousel__container">
                     {diaporamaImages.map((image, index) => (
                         <div key={index} className="Image__container">
                             <img src={image.src} alt={image.alt} width={image.width} height={image.height} />
-                            <h2>{image.alt}</h2>
+                            <h3>{image.alt}</h3>
                         </div>
                     ))}
                 </div>
