@@ -4,19 +4,19 @@ import LinkButton from "../atoms/LinkButton";
 
 const navigationLinks = [
     {
-      href: "#center",
+      href: "#Home",
       icon: "",
       label: "Home"
     },
     {
-      href: "#next-steps",
+      href: "#Portfolio",
       icon: "",
-      label: "Next Steps"
+      label: "Portfolio"
     },
         {
-      href: "#next-steps",
+      href: "#About",
       icon: "",
-      label: "Next Steps"
+      label: "About"
     },
 ]
 
@@ -30,7 +30,7 @@ export default function Navbar(){
         />
         <ul>
             {navigationLinks.map((link, index) => (
-                <LinkButton key={index} link={link}  active={link.label === "Home" ? true : false}/>
+                <LinkButton key={index} link={link}  active={link.label === "Home" ? true : false} />
             ))}
         </ul>
     </nav>
