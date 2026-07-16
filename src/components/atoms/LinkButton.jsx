@@ -5,10 +5,10 @@ import './LinkButton.css';
 
 
 
-const LinkButton = ({ link, active }) => {
+const LinkButton = ({ link, active, activate_page}) => {
   return (
     <li>
-        <a href={link.href} target="_blank" className={active === true ? 'active' : ''}>
+        <a target="_blank" className={active === true ? 'active' : ''} onClick={() => activate_page(link.label)}>
           {link.icon && (
             <svg
               className="button-icon"

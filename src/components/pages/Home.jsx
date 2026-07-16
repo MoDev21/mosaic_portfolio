@@ -21,7 +21,7 @@ import Music from '../../assets/images/svg/music-notes-svgrepo-com.svg'
 import Motherboard from '../../assets/images/svg/motherboard.svg'
 import VideoGames from '../../assets/images/svg/video-games-game-controller.svg'
 
-export default function Home() {
+export default function Home({activate_page}) {
   const [count, setCount] = useState(0)
   const socialLinks = [
     {
@@ -89,7 +89,7 @@ export default function Home() {
         <div className='hero_section__container'>
           <DiamondMosaic />
           <div className="blur-background"></div>
-          <Navbar />
+          <Navbar activate_page={activate_page}/>
           <div className="hero-section-content">
             <h1>Get started</h1>
             <p> 
