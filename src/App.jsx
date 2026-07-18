@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import Home from './components/pages/Home'
+import Portfolio from './components/pages/Portfolio'
 import About from './components/pages/About'
 import Navbar from './components/organisme/Navbar'
 
@@ -24,6 +25,11 @@ function App() {
     {
       name: "About",
       component: About,
+      active: false
+    },
+    {
+      name: "Portfolio",
+      component: Portfolio,
       active: false
     }
   ]);

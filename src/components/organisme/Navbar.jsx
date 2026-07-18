@@ -20,7 +20,7 @@ const navigationLinks = [
     },
 ]
 
-export default function Navbar({activate_page}){
+export default function Navbar({activate_page, active_page_name}) {
   return (
     <nav>
         <img 
@@ -30,7 +30,7 @@ export default function Navbar({activate_page}){
         />
         <ul>
             {navigationLinks.map((link, index) => (
-                <LinkButton key={index} link={link}  active={link.label === "Home" ? true : false} activate_page={activate_page}/>
+                <LinkButton key={index} link={link}  active={link.label === active_page_name ? true : false} activate_page={activate_page}/>
             ))}
         </ul>
     </nav>

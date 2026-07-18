@@ -89,7 +89,7 @@ export default function Home({activate_page}) {
         <div className='hero_section__container'>
           <DiamondMosaic />
           <div className="blur-background"></div>
-          <Navbar activate_page={activate_page}/>
+          <Navbar activate_page={activate_page} active_page_name="Home"/>
           <div className="hero-section-content">
             <h1>Get started</h1>
             <p> 
