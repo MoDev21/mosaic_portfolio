@@ -48,7 +48,7 @@
   flex-direction: row;
   gap: 24px;
   border-radius: 25px;
-      border: 2px #7777774b solid;
+  border: 2px #7777774b solid;
   .home__about_me_modalbox_image{
     border-radius: 25px;
     width: 291px;
