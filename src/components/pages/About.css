@@ -181,39 +181,41 @@ section {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+        gap: 5px;
         width: 50%;
-        height: 38dvh
+        height: 38dvh;
     }
 
-    .language_grid div {
+    .language_grid > div {
         padding: 16px;
         border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         overflow: hidden;
         h4 {
             margin: 0;
             font-size: 1.5rem;
             font-weight: 800;
         }
+
+        
     }
 
     .french { 
-
+        border: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         grid-area: 1 / 1 / 2 / 2; 
     }
     .english { 
-
+        border: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         grid-area: 1 / 2 / 2 / 3; 
     }
     .spanish {
-
+        border: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         grid-area: 2 / 1 / 3 / 3; 
-        
     }
 
     .language__progress__bar {
