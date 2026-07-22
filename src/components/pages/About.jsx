@@ -71,12 +71,11 @@ function ExpertiseCategoriesContainer({expertise_category__name, expertise_categ
         <div className="expertise_category__container">
             <div className="expertise_category__name">{expertise_category__name}</div>
             <div className="expertise_category__list">
-                {expertise_category__list.map((list) => {
+                {expertise_category__list.map((list, index) => {
                     return (
-                        <div className="expertise_category__list_item">{list.list_item__name}</div>
+                        <div key={index} className="expertise_category__list_item">{list.list_item__name}</div>
                     )
                 })}
-                
             </div>
         </div>
     )
@@ -87,25 +86,33 @@ const languages = [
     {
         "language": "French",
         "level": "Native Tongue",
-        "Percentage": 100
+        "Percentage": 100,
+        "BackgroundColor": "#0026ff50",
+        "ProgressColor": "#0026ff70"
     },
     {
         "language": "English",
         "level": "Native Tongue",
-        "Percentage": 100
+        "Percentage": 100,
+        "BackgroundColor": "#ffffff50",
+        "ProgressColor": "#ffffff70"
     },
     {
         "language": "Spanish",
         "level": "Pending...",
-        "Percentage": 100
+        "Percentage": 10,
+        "BackgroundColor": "#db151550",
+        "ProgressColor": "#db151570"
     },
 ]
 
-function LanguageDiv({language, level, percentage}) {
+
+function LanguageDiv({language, level, percentage, backgroundColor, progressColor}) {
     return (
-        <div className={language.toLowerCase()}>
+        <div className={language.toLowerCase()} style={{backgroundColor: backgroundColor}}>
             <h4>{language}</h4>
             <p>{level}</p>
+            <div className="language__progress__bar" style={{width: `${percentage}%`, backgroundColor: progressColor}}></div>
         </div>
     )
 }
@@ -230,7 +237,15 @@ export default function About({activate_page}) {
                     <h2>Language</h2>
                     <div className="language_grid">
                         {languages.map((language, index) => (
-                            <LanguageDiv key={index} language={language.language} level={language.level} />
+                            <
+                                LanguageDiv 
+                                key={index} 
+                                language={language.language} 
+                                level={language.level} 
+                                percentage={language.Percentage} 
+                                backgroundColor={language.BackgroundColor} 
+                                progressColor={language.ProgressColor}
+                            />
                         ))}
                     </div>
                 </div>
