@@ -83,6 +83,100 @@ function ExpertiseCategoriesContainer({expertise_category__name, expertise_categ
 }
 
 
+const languages = [
+    {
+        "language": "French",
+        "level": "Native Tongue",
+        "Percentage": 100
+    },
+    {
+        "language": "English",
+        "level": "Native Tongue",
+        "Percentage": 100
+    },
+    {
+        "language": "Spanish",
+        "level": "Pending...",
+        "Percentage": 100
+    },
+]
+
+function LanguageDiv({language, level, percentage}) {
+    return (
+        <div className={language.toLowerCase()}>
+            <h4>{language}</h4>
+            <p>{level}</p>
+        </div>
+    )
+}
+
+
+const soft_skills = [
+    {
+        "name": "Creativity",
+        "image": "",
+    },
+    {
+        "name": "Adaptability",
+        "image": "",
+    },
+    {
+        "name": "Fast learning",
+        "image": "",
+    },
+    {
+        "name": "Attention to Details",
+        "image": "",
+    },
+    {
+        "name": "Intuition",
+        "image": "",
+    },
+]
+
+function SoftSkillDiv({name}) {
+    return (
+        <div className="soft_skill__div">
+            <h4>{name}</h4>
+            <img src="" alt="" />
+        </div>
+    )
+}
+
+
+const interests = [
+    {
+        "name": "Creativity",
+        "image": "",
+    },
+    {
+        "name": "Adaptability",
+        "image": "",
+    },
+    {
+        "name": "Fast learning",
+        "image": "",
+    },
+    {
+        "name": "Attention to Details",
+        "image": "",
+    },
+    {
+        "name": "Intuition",
+        "image": "",
+    },
+]
+
+function InterestDiv({name}) {
+    return (
+        <div className="interest__div">
+            <h4>{name}</h4>
+            <img src="" alt="" />
+        </div>
+    )
+}
+
+
 
 export default function About({activate_page}) {
     return (
@@ -132,9 +226,30 @@ export default function About({activate_page}) {
                         ))}
                     </div>
                 </div>
-                <div className="language__section"></div>
-                <div className="soft_skills__section"></div>
-                <div className="interest__section"></div>
+                <div className="language__section">
+                    <h2>Language</h2>
+                    <div className="language_grid">
+                        {languages.map((language, index) => (
+                            <LanguageDiv key={index} language={language.language} level={language.level} />
+                        ))}
+                    </div>
+                </div>
+                <div className="soft_skills__section">
+                    <h2>Soft Skills</h2>
+                    <div className="soft_skills__list">
+                        {soft_skills.map((soft_skill, index) => (
+                            <SoftSkillDiv key={index} name={soft_skill.name}/>
+                        ))}
+                    </div>
+                </div>
+                <div className="interest__section">
+                     <h2>Soft Skills</h2>
+                     <div className="interest__list">
+                        {interests.map((interest, index) => (
+                            <InterestDiv key={index} name={interest.name}/>
+                        ))}
+                     </div>
+                </div>
             </section>
         </div>
     )
