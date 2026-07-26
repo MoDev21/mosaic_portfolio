@@ -2,6 +2,8 @@ import {useState} from 'react'
 import Navbar from '../organisme/Navbar'
 import ExpienceContainer from '../molecules/ExperianceContainer'
 import './About.css'
+import ExpertiseCategoriesContainer from '../molecules/ExpertiseCategoriesContainer'
+import LanguageDiv from '../molecules/LanguageDiv'
 
 const experiences = [
     {
@@ -23,63 +25,83 @@ const experiences = [
 
 const expertise_categories = [
     {
-        "expertise_category__name": "Categorie Name",
+        "expertise_category__name": "Programming",
         "expertise_category__list": [
-            {
-                "list_item__name": "Work",
-            },
-            {
-                "list_item__name": "Work",
-            },
-            {
-                "list_item__name": "Work",
-            },
+          {
+              "list_item__name": "HTML/CSS",
+          },
+          {
+              "list_item__name": "React JS",
+          },
+          {
+              "list_item__name": "JavaScript",
+          },
+          {
+              "list_item__name": "PHP",
+          },
+          {
+              "list_item__name": "Python",
+          },
+          {
+              "list_item__name": "SQL",
+          },
+          {
+              "list_item__name": "C#",
+          },
         ]
     },
     {
-        "expertise_category__name": "Categorie Name",
+        "expertise_category__name": "UI/UX designer",
         "expertise_category__list": [
-            {
-                "list_item__name": "Work",
-            },
-            {
-                "list_item__name": "Work",
-            },
-            {
-                "list_item__name": "Work",
-            },
+          {
+              "list_item__name": "Figma",
+          },
+          {
+              "list_item__name": "Wireframing",
+          },
+          {
+              "list_item__name": "Ideation",
+          },
+          {
+              "list_item__name": "Prototyping",
+          },
+          {
+              "list_item__name": "Affinity Designer",
+          },
+          
         ]
     },
     {
-        "expertise_category__name": "Categorie Name",
+        "expertise_category__name": "Graphic Design",
         "expertise_category__list": [
             {
-                "list_item__name": "Work",
+                "list_item__name": "Adobe Illustrator",
             },
             {
-                "list_item__name": "Work",
+                "list_item__name": "Affinity Studio",
             },
             {
-                "list_item__name": "Work",
+                "list_item__name": "Sketching",
             },
         ]
-    },
+  },
+  {
+      "expertise_category__name": "Game Development",
+      "expertise_category__list": [
+          {
+              "list_item__name": "Godot",
+          },
+          {
+              "list_item__name": "Unity",
+          },
+          {
+              "list_item__name": "Unreal Engine",
+          },
+      ]
+  },
 ]
 
-function ExpertiseCategoriesContainer({expertise_category__name, expertise_category__list}) {
-    return (
-        <div className="expertise_category__container">
-            <div className="expertise_category__name">{expertise_category__name}</div>
-            <div className="expertise_category__list">
-                {expertise_category__list.map((list, index) => {
-                    return (
-                        <div key={index} className="expertise_category__list_item">{list.list_item__name}</div>
-                    )
-                })}
-            </div>
-        </div>
-    )
-}
+
 
 
 const languages = [
@@ -107,17 +129,7 @@ const languages = [
 ]
 
 
-function LanguageDiv({language, level, percentage, backgroundColor, progressColor}) {
-    return (
-        <div className={language.toLowerCase()} style={{backgroundColor: backgroundColor}}>
-            <div className="language_info">
-                <h4>{language}</h4>
-                <p>{level}</p>
-            </div>
-            <div className="language__progress__bar" style={{width: `${percentage}%`, backgroundColor: progressColor}}></div>
-        </div>
-    )
-}
+
 
 
 const soft_skills = [
@@ -155,23 +167,23 @@ function SoftSkillDiv({name}) {
 
 const interests = [
     {
-        "name": "Creativity",
+        "name": "Sports",
         "image": "",
     },
     {
-        "name": "Adaptability",
+        "name": "Gaming",
         "image": "",
     },
     {
-        "name": "Fast learning",
+        "name": "Bible",
         "image": "",
     },
     {
-        "name": "Attention to Details",
+        "name": "Tech",
         "image": "",
     },
     {
-        "name": "Intuition",
+        "name": "Music",
         "image": "",
     },
 ]
@@ -217,9 +229,11 @@ export default function About({activate_page}) {
                 </div>
                 <div className="education__section">
                     <h2>Education</h2>
-                    <h4>2023</h4>
-                    <h3>DCS in Multimedia Integration</h3>
-                    <p>Maisonneuve College</p>
+                    <div className='education__section_content'>
+                      <h4>2023</h4>
+                      <h3>DCS in Multimedia Integration</h3>
+                      <p>Maisonneuve College</p>
+                    </div>
                 </div>
                 <div className="experiences__section">
                     <h2>Experiences</h2>
@@ -259,14 +273,14 @@ export default function About({activate_page}) {
                         ))}
                     </div>
                 </div>
-                <div className="interest__section">
-                     <h2>Soft Skills</h2>
+                {/* <div className="interest__section">
+                     <h2>Interest</h2>
                      <div className="interest__list">
                         {interests.map((interest, index) => (
                             <InterestDiv key={index} name={interest.name}/>
                         ))}
                      </div>
-                </div>
+                </div>*/}
             </section>
         </div>
     )

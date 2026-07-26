@@ -80,6 +80,25 @@ section {
     }
 }
 
+.education__section{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 30px;
+    .education__section_content{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        margin: 0 0;
+        gap: 15px;
+        h3, h4{
+            margin: 0 0;
+        }
+    }
+}
+
 .experiences__section {
     display: flex;
     align-content: center;
@@ -106,7 +125,7 @@ section {
                 margin: 0;
             }
             .experience_info_container__workplace_name{
-                font-weight: 200;
+                font-weight: normal;
             }
             .experience_info_container__paragraph{
                 text-align: left;
@@ -135,17 +154,16 @@ section {
         flex-direction: row;
         align-content: center;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         gap: 25px;
         .expertise_category__container{
             display: flex;
             flex-direction: column;
             align-content: center;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             .expertise_category__name{
                 font-weight: 500;
-                font-size: 2rem;
                 line-height: 1.2;
                 padding: 0 26px;
             }
