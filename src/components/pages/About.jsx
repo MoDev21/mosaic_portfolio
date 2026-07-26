@@ -68,7 +68,7 @@ const expertise_categories = [
           {
               "list_item__name": "Affinity Designer",
           },
-          
+
         ]
     },
     {
@@ -221,9 +221,9 @@ export default function About({activate_page}) {
                     <div className="about_me__section_info">
                         <h2>About me</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt diam ac turpis tristique, ac sagittis justo tristique. Nullam cursus, 
-                            ligula vitae consectetur vulputate, ligula ipsum placerat arcu, ut hendrerit orci augue non purus. 
-                            Fusce vel ex euismod, tempor sapien ut, varius nunc. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt diam ac turpis tristique, ac sagittis justo tristique. Nullam cursus,
+                            ligula vitae consectetur vulputate, ligula ipsum placerat arcu, ut hendrerit orci augue non purus.
+                            Fusce vel ex euismod, tempor sapien ut, varius nunc.
                         </p>
                     </div>
                 </div>
@@ -254,12 +254,12 @@ export default function About({activate_page}) {
                     <div className="language_grid">
                         {languages.map((language, index) => (
                             <
-                                LanguageDiv 
-                                key={index} 
-                                language={language.language} 
-                                level={language.level} 
-                                percentage={language.Percentage} 
-                                backgroundColor={language.BackgroundColor} 
+                                LanguageDiv
+                                key={index}
+                                language={language.language}
+                                level={language.level}
+                                percentage={language.Percentage}
+                                backgroundColor={language.BackgroundColor}
                                 progressColor={language.ProgressColor}
                             />
                         ))}
