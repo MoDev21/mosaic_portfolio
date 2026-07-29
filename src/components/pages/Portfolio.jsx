@@ -14,31 +14,6 @@ const filterButtons = [
 
 
 
-
-
-
-
-function FilterButton({id, name, value, onFilterChange}) {
-    return (
-      <div className='filter_button'>
-        <input type="radio" id={id} name={name} value={value} onChange={onFilterChange} />
-        <label htmlFor={id}>{value}</label>
-      </div>
-    )
-}
-
-function FilterBar({ selectedCategory, onFilterChange }) {
-    return (
-        <div className="filter_bar">
-            {filterButtons.map(button => (
-                <FilterButton key={button.id} {...button} onFilterChange={onFilterChange} />
-            ))}
-        </div>
-    )
-}
-
-
-
 const images = [
   { id: 1, category: 'Web Development', src: 'src/assets/BingWallpaper-2020-02-07.jpg' },
   { id: 2, category: 'Web Development', src: 'src/assets/photo-of-starry-night-1421903.jpg' },
@@ -74,6 +49,34 @@ const images = [
   { id: 32, category: 'GameDev', src: 'src/assets/images/f4c2b316044526763b497120ae6f.jpg' },
 ]
 
+
+// filterButton and FilterBar html
+
+function FilterButton({id, name, value, onFilterChange, selectedCategory}) {
+    return (
+      <div className='filter_button'>
+        <input type="radio" id={id} name={name} value={value} onChange={onFilterChange} checked={selectedCategory === value} />
+        <label htmlFor={id}>{value}</label>
+      </div>
+    )
+}
+
+
+
+function FilterBar({ selectedCategory, onFilterChange }) {
+    return (
+      <div className="filter_bar">
+          {/* generate the filter buttons based on the filterButtons array */}
+          {filterButtons.map(button => (
+              <FilterButton key={button.id} {...button} onFilterChange={onFilterChange} selectedCategory={selectedCategory} />
+          ))}
+      </div>
+    )
+}
+
+
+
+
 function handleClick(image) {
   console.log(image)
 }
@@ -93,15 +96,15 @@ function Gallery({ images, selectedCategory }) {
   )
 }
 
-// function ModalBox({ isOpen, onClose }) {
-//   return (
-//     <div className={`modal ${isOpen ? 'open' : ''}`}>
-//       <button onClick={onClose}>Close</button>
-//       <p>{image.category}</p>
-//       <img src={image.src} alt={image.category} />
-//     </div>
-//   )
-// }
+function ModalBox({ isOpen, onClose }) {
+  return (
+    <div className={`modal ${isOpen ? 'open' : ''}`}>
+      <button onClick={onClose}>Close</button>
+      <p>{image.category}</p>
+      <img src={image.src} alt={image.category} />
+    </div>
+  )
+}
 
 export default function Portfolio({ activate_page }) {
   const [selectedCategory, setSelectedCategory] = useState('all');
