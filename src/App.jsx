@@ -25,12 +25,12 @@ function App() {
     {
       name: "About",
       component: About,
-      active: true
+      active: false
     },
     {
       name: "Portfolio",
       component: Portfolio,
-      active: false
+      active: true
     }
   ]);
 
