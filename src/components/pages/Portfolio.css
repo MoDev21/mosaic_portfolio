@@ -67,5 +67,42 @@
             cursor: pointer;
         }
     }
+}
 
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+    display: flex;
+    flex-direction: row;
+    backdrop-filter: blur(20px);
+    button {
+        background-color: #5681a738;
+        border: none;
+        color: #ffffff;
+        padding: 20px;
+        transition: .1s;
+        border-radius: 50px;
+        &:hover {
+            scale: 1.1;
+            cursor: pointer;
+            background-color: #a7567f38;
+            border-radius: 0px;
+        }
+    }
+    .modalbox_image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            border-radius: 20px;
+            height: auto;
+            width: 120dvh;
+        }
+    }
 }
