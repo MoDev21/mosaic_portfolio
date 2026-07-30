@@ -247,9 +247,9 @@ const images = [
 
 
 
-function ModalBox({ isOpen, onClose, image }) {
+function ModalBox({ onClose, image }) {
   return (
-    <div className={`modal ${isOpen ? 'open' : ''}`}>
+    <div className='modalbox'>
       <div className="modalbox_image">
         <img src={image.src} alt={image.category} />
       </div>
