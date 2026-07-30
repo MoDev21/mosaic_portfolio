@@ -19,7 +19,7 @@ a {
         cursor: pointer;
     }
     &:active {
-        border: 1px solid #ffffff;
+        border: 1px solid var(--border);
     }
     .button-icon {
         height: 18px;
@@ -41,5 +41,5 @@ a {
 
 
 .active {
-    border: 1px solid #ffffff;
+    border: 1px solid var(--border);
 }

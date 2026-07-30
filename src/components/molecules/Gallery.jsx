@@ -10,7 +10,7 @@ export default function Gallery({ ...props }) {
       {props.images.map(image => (
         props.selectedCategory === 'All' || props.selectedCategory === image.category ? (
           <div key={image.id} className="gallery_item" onClick={() => props.handleClick(image)}>
-            <img src={image.src} alt={image.category} className={image.category === props.selectedCategory ? 'selected' : ''} />
+            <img src={image.diaporama_array[0].src} alt={image.category} className={image.category === props.selectedCategory ? 'selected' : ''} />
           </div>
         ) : null
       ))}
