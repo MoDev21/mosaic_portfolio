@@ -29,7 +29,7 @@ function ModalBox({ image, onShow, isHideDesc }) {
         <div className={"modalbox_description" + (isHideDesc ? ' modalbox_description_hide' : '')}>
           <h3>{image.title}</h3>
           <p>{image.description}</p>
-          <button className='modalbox_desc_show_button' onClick={onShow}>Show</button>
+          <button className='modalbox_desc_show_button' onClick={onShow}>{isHideDesc ? 'Show' : 'Hide'}</button>
         </div>
       </div>
     </div>
@@ -67,11 +67,6 @@ export default function Portfolio({ activate_page }) {
     setSelectedImage(image)
     setIsModalOpen(true) 
     console.log('setSelectedImage ')
-  }
-
-  function handleHideDesc() {
-    console.log('handleHideDesc ', isHideDesc)
-    setIsHideDesc(true)
   }
 
   function handleShowDesc() {
