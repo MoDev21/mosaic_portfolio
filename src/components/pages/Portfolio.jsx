@@ -35,7 +35,9 @@ function ModalBox({ image }) {
         <img src={image.src} alt={image.title} onClick={handleShowDesc}/>
         <div className={"modalbox_description" + (isHideDesc ? ' modalbox_description_hide' : '')}>
           <h3>{image.title}</h3>
-          <p>{image.description}</p>
+          <div className='description_container'>
+            <p>{image.description}</p>
+          </div>
           <button className='modalbox_desc_show_button' onClick={handleShowDesc}>{isHideDesc ? 'Show' : 'Hide'}</button>
         </div>
       </div>
