@@ -21,11 +21,11 @@
     .blur-background {
         position: absolute;
         background-color: #44449b61;
+        backdrop-filter: blur(10px);
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        backdrop-filter: blur(10px);
         z-index: -1;
     }
     .hero-section-content {

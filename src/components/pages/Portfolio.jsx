@@ -21,27 +21,29 @@ const filterButtons = [
 
 
 
-function ModalBox({ image }) {
+function ModalBox({ image, onHide, onShow, isHideDesc }) {
   return (
     <div className='modalbox'>
       <div className="modalbox_image">
-        <img src={image.src} alt={image.title} />
-      </div>
-      <div className="modalbox_description">
-        <h3>{image.title}</h3>
-        <p>{image.description}</p>
+        <img src={image.src} alt={image.title} onClick={onShow}/>
+        <div className={"modalbox_description" + (isHideDesc ? ' modalbox_description_hide' : '')}>
+          <button onClick={onHide}>Hide</button>
+          <h3>{image.title}</h3>
+          <p>{image.description}</p>
+          <button className='modalbox_desc_show_button' onClick={onShow}>Show</button>
+        </div>
       </div>
     </div>
   )
 }
 
-function ModalBoxContainer({ image, onClose }) {
+function ModalBoxContainer({ image, onClose, onHide, onShow, isHideDesc }) {
   console.log('ModalBoxContainer ', image)
   return (
     <div className='modalbox_container'>
       <button onClick={onClose}>Close</button>
       {image.diaporama_array.map((item, index) => (
-        <ModalBox index={index} image={item} onClose={onClose} />
+        <ModalBox index={index} image={item} onClose={onClose} onHide={onHide} onShow={onShow} isHideDesc={isHideDesc} />
       ))}
     </div>
   )
@@ -54,6 +56,7 @@ export default function Portfolio({ activate_page }) {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState(portfolio[0])
+  const [isHideDesc, setIsHideDesc] = useState(false)
   
   function handleFilterChange(event) {
     console.log(event.target.value);
@@ -67,6 +70,15 @@ export default function Portfolio({ activate_page }) {
     console.log('setSelectedImage ')
   }
 
+  function handleHideDesc() {
+    console.log('handleHideDesc ', isHideDesc)
+    setIsHideDesc(true)
+  }
+
+  function handleShowDesc() {
+    console.log('handleShowDesc ', isHideDesc)
+    setIsHideDesc(current => !current)
+  }
 
   
   return (
@@ -79,7 +91,7 @@ export default function Portfolio({ activate_page }) {
       <div className="portfolio_content">
         <FilterBar filterButtons={filterButtons} selectedCategory={selectedCategory} onFilterChange={handleFilterChange} />
         <Gallery selectedCategory={selectedCategory} images={portfolio} handleClick={handleClick} />
-        {isModalOpen === true && <ModalBoxContainer onClose={() => setIsModalOpen(false)} image={selectedImage}/>}
+        {isModalOpen === true && <ModalBoxContainer onClose={() => setIsModalOpen(false)} image={selectedImage} onHide={handleHideDesc} onShow={handleShowDesc} isHideDesc={isHideDesc} />}
       </div>
     </div>
   )
