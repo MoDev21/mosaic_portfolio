@@ -21,28 +21,35 @@ const filterButtons = [
 
 
 
-function ModalBox({ image, onShow, isHideDesc }) {
+function ModalBox({ image }) {
+  const [isHideDesc, setIsHideDesc] = useState(true)
+  
+  function handleShowDesc() {
+    console.log('handleShowDesc ', isHideDesc)
+    setIsHideDesc(current => !current)
+  }
+  
   return (
     <div className='modalbox'>
       <div className="modalbox_image">
-        <img src={image.src} alt={image.title} onClick={onShow}/>
+        <img src={image.src} alt={image.title} onClick={handleShowDesc}/>
         <div className={"modalbox_description" + (isHideDesc ? ' modalbox_description_hide' : '')}>
           <h3>{image.title}</h3>
           <p>{image.description}</p>
-          <button className='modalbox_desc_show_button' onClick={onShow}>{isHideDesc ? 'Show' : 'Hide'}</button>
+          <button className='modalbox_desc_show_button' onClick={handleShowDesc}>{isHideDesc ? 'Show' : 'Hide'}</button>
         </div>
       </div>
     </div>
   )
 }
 
-function ModalBoxContainer({ image, onClose, onShow, isHideDesc }) {
+function ModalBoxContainer({ image, onClose, onShow }) {
   console.log('ModalBoxContainer ', image)
   return (
     <div className='modalbox_container'>
       <button onClick={onClose}>Close</button>
       {image.diaporama_array.map((item, index) => (
-        <ModalBox index={index} image={item} onClose={onClose} onShow={onShow} isHideDesc={isHideDesc} />
+        <ModalBox index={index} image={item} onClose={onClose} onShow={onShow} />
       ))}
     </div>
   )
@@ -55,7 +62,7 @@ export default function Portfolio({ activate_page }) {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState(portfolio[0])
-  const [isHideDesc, setIsHideDesc] = useState(false)
+
   
   function handleFilterChange(event) {
     console.log(event.target.value);
@@ -69,10 +76,7 @@ export default function Portfolio({ activate_page }) {
     console.log('setSelectedImage ')
   }
 
-  function handleShowDesc() {
-    console.log('handleShowDesc ', isHideDesc)
-    setIsHideDesc(current => !current)
-  }
+
 
   
   return (
@@ -85,7 +89,7 @@ export default function Portfolio({ activate_page }) {
       <div className="portfolio_content">
         <FilterBar filterButtons={filterButtons} selectedCategory={selectedCategory} onFilterChange={handleFilterChange} />
         <Gallery selectedCategory={selectedCategory} images={portfolio} handleClick={handleClick} />
-        {isModalOpen === true && <ModalBoxContainer onClose={() => setIsModalOpen(false)} image={selectedImage} onShow={handleShowDesc} isHideDesc={isHideDesc} />}
+        {isModalOpen === true && <ModalBoxContainer onClose={() => setIsModalOpen(false)} image={selectedImage} />}
       </div>
     </div>
   )

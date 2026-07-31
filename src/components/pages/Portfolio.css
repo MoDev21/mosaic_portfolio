@@ -115,6 +115,9 @@
             align-items: center;
             overflow: hidden;
             position: relative;
+            :hover {
+                cursor: pointer;
+            }
             img {
                 border-radius: 20px;
                 height: auto;
