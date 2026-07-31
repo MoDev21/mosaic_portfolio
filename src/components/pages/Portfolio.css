@@ -106,6 +106,7 @@
     .modalbox {
         position: relative;
         padding: 45px;
+        top: -15%;
 
         .modalbox_image {
             flex: 1;
@@ -138,14 +139,13 @@
                 p {
                     font-size: 1.2rem;
                 }
-
-                /*.modalbox_desc_show_button {
-                    opacity: 0;
-                }*/
             }
 
             .modalbox_description_hide {
                 right: -35%;
+                .modalbox_desc_show_button {
+                    opacity: 1;
+                }
             }
 
             .modalbox_desc_show_button {
