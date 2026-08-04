@@ -148,8 +148,9 @@ export default function Portfolio({ activate_page }) {
       <div className='portfolio_container'>
         <Navbar activate_page={activate_page} active_page_name="Portfolio" />
         <header>
-          <h1>Portfolio</h1>
-          <p>Welcome to our portfolio page!</p>
+          <h1>Look at my <br/>
+          HANDIWORK </h1>
+          <p>Here is where you see all my work</p>
         </header>
         <div className="portfolio_content">
           <FilterBar filterButtons={filterButtons} selectedCategory={selectedCategory} onFilterChange={handleFilterChange} />

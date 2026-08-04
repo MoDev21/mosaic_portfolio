@@ -1,3 +1,18 @@
+header{
+    padding: 20px;
+    text-align: start;
+    width: 100%;
+    height: 80dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    h1{
+        text-align: start;
+    }
+}
+
+
 
 .portfolio_content {
     display: flex;
