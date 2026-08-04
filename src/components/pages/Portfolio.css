@@ -184,3 +184,64 @@
 
     }
 }
+
+
+
+.portfolio_header__background_images {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    /* transform: translate(-50%, -50%); */
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    & > * {
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+    }
+    
+    .first_bg_image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: auto;
+    }
+
+    .second_bg_image {
+        position: absolute;
+        top: 20%;
+        left: 78%;
+        width: 25%;
+        height: auto;
+        z-index: -1;
+    }
+
+    .third_bg_image {
+        position: absolute;
+        top: 20%;
+        left: 15%;
+        width: 30%;
+        height: auto;
+
+    }
+
+    .fourth_bg_image {
+        position: absolute;
+        top: 75%;
+        left: 86%;
+        width: 29%;
+        height: auto;
+
+    }
+
+    .fifth_bg_image {
+        position: absolute;
+        top: 75%;
+        left: 25%;
+        width: 40%;
+        height: auto;
+        z-index: -1;
+
+    }
+}

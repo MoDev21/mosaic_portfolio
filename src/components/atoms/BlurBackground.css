@@ -1,0 +1,23 @@
+.blur-background {
+    position: absolute;
+    background-color: #44449b61;
+    backdrop-filter: blur(10px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+.portfolio {
+    position: absolute;
+    background-color: #11121461;
+    backdrop-filter: blur(10px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}

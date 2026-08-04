@@ -12,6 +12,7 @@ a {
     transition: 0.3s;
     border: 0px solid #ffffff00;
     border-radius: 30px;
+    font-family: var(--sans);
 
     &:hover {
         /* box-shadow: var(--shadow); */

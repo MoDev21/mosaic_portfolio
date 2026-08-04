@@ -20,6 +20,11 @@ import Sports from '../../assets/images/svg/sports-basketball.svg'
 import Music from '../../assets/images/svg/music-notes-svgrepo-com.svg'
 import Motherboard from '../../assets/images/svg/motherboard.svg'
 import VideoGames from '../../assets/images/svg/video-games-game-controller.svg'
+import BlurBackground from '../../components/atoms/BlurBackground'
+
+
+
+
 
 export default function Home({activate_page}) {
   const [count, setCount] = useState(0)
@@ -81,14 +86,13 @@ export default function Home({activate_page}) {
 
 
 
-
   return (
     <>
       <section id="center">
         
         <div className='hero_section__container'>
           <DiamondMosaic />
-          <div className="blur-background"></div>
+          <BlurBackground className='blur-background'/>
           <Navbar activate_page={activate_page} active_page_name="Home"/>
           <div className="hero-section-content">
             <h1>Get started</h1>

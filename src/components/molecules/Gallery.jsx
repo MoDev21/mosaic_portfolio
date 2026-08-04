@@ -8,9 +8,9 @@ export default function Gallery({ ...props }) {
   return (
     <div className="gallery">
       {props.images.map(image => (
-        props.selectedCategory === 'All' || props.selectedCategory === image.category ? (
+        props.selectedCategory === 'All' || image.tags.includes(props.selectedCategory) ? (
           <div key={image.id} className="gallery_item" onClick={() => props.handleClick(image)}>
-            <img src={image.diaporama_array[0].src} alt={image.category} className={image.category === props.selectedCategory ? 'selected' : ''} />
+            <img src={image.diaporama_array[0].src} alt={image.tags[0]} className={image.tags.includes(props.selectedCategory) ? 'selected' : ''} />
           </div>
         ) : null
       ))}
