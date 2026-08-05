@@ -1,7 +1,7 @@
 import React from "react";
 import mosaiclogo from '../../assets/mosaic_logo.png';
 import LinkButton from "../atoms/LinkButton";
-
+import "./Navbar.css"
 const navigationLinks = [
     {
       href: "#Home",

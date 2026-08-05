@@ -189,54 +189,6 @@ section{
     border-right-color: var(--border);
   }
 } */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 8px 8px;
-  margin: 0 0;
-  background-color: #2f323e00;
-  border-radius: 6px;
-  width: stretch;
-
-  @media (max-width: 1024px) {
-    padding: 20px;
-    justify-content: center;
-    gap: 16px;
-  }
-}
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 0 0;
-
-
-  .logo {
-    height: 18px;
-  }
-
-
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
-}
-
 
 // Embla Carousel Styles
 .embla__viewport {
