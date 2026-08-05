@@ -204,7 +204,7 @@ export default function About({activate_page}) {
         <div className='About_container'>
             <div className="about_background">
                 <div className="gradiant_screen"></div>
-                <img className='about_background__image' src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' alt="" />
+                <img className='about_background__image' src='src/assets/images/Property 1=Default.png' alt="" />
             </div>
             <Navbar activate_page={activate_page} active_page_name="About"/>
             <header>

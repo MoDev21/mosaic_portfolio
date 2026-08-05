@@ -95,11 +95,11 @@ export default function Home({activate_page}) {
           <BlurBackground className='blur-background'/>
           <Navbar activate_page={activate_page} active_page_name="Home"/>
           <div className="hero-section-content">
-            <h1>Get started</h1>
-            <p> 
+            <h1>Bringing imaginations into reality through GRAPHIC DESIGN</h1>
+            {/* <p> 
               Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
             </p>
-            <CountButton count={count} setCount={setCount} />
+            <CountButton count={count} setCount={setCount} />*/}
           </div>
 
         </div>
