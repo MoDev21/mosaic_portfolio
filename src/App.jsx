@@ -20,7 +20,7 @@ function App() {
     {
       name: "Home",
       component: Home,
-      active: false
+      active: true
     },
     {
       name: "About",
@@ -30,7 +30,7 @@ function App() {
     {
       name: "Portfolio",
       component: Portfolio,
-      active: true
+      active: false 
     }
   ]);
 

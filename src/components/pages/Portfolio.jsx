@@ -79,12 +79,12 @@ const background_images = [
 
 function ModalBox({ image }) {
   const [isHideDesc, setIsHideDesc] = useState(true)
-  
+
   function handleShowDesc() {
     console.log('handleShowDesc ', isHideDesc)
     setIsHideDesc(current => !current)
   }
-  
+
   return (
     <div className='modalbox'>
       <div className="modalbox_image">
@@ -121,7 +121,7 @@ export default function Portfolio({ activate_page }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState(portfolio[0])
 
-  
+
   function handleFilterChange(event) {
     console.log(event.target.value);
     setSelectedCategory(event.target.value);
@@ -130,19 +130,22 @@ export default function Portfolio({ activate_page }) {
   function handleClick(image) {
     console.log(image.diaporama_array[0])
     setSelectedImage(image)
-    setIsModalOpen(true) 
+    setIsModalOpen(true)
     console.log('setSelectedImage ')
   }
 
 
 
-  
+
   return (
     <div>
       <div className='portfolio_header__background_images'>
         <BlurBackground className='portfolio'/>
         {background_images.map((background_image, index) => (
-          <img src={background_image.src} alt='' className={background_image.className} /> 
+          <div key={index} className={background_image.className}>
+            <div className='gradiant_screen'></div>
+            <img src={background_image.src} alt=''/>
+          </div>
         ))}
       </div>
       <div className='portfolio_container'>
