@@ -63,6 +63,7 @@
   gap: 24px;
   border-radius: 25px;
   border: 2px #7777774b solid;
+  width: 75%;
   .home__about_me_modalbox_image{
     border-radius: 25px;
     width: 291px;
@@ -87,9 +88,9 @@
     gap: 24px;
     justify-content: center;
     align-items: center;
+
     h2{
       font-size: 4rem;
     }
-    button
   }
 }

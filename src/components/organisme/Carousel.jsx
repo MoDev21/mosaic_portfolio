@@ -99,15 +99,16 @@ export function EmblaCarousel() {
           className="Carousel__container"
           style={{
             transform: `translate(30%, 0px)`,
-            transition: transitionStatus === "Idle" ? ".5s" : "none"
+            transition: 'transform 0.5s'
           }}
         >
-          {diaporamaImages.map((image, index) => (
-                <div key={index} className={`Image__container ${image.className}`}  onClick={(e) => handleClick(e, index)} >
-                    <img src={image.src} alt={image.alt}  />
-                    <h3>{image.alt}</h3>
-                </div>
-            ))}
+        {diaporamaImages.map((image, index) => (
+          <div key={index} className={`image__container ${image.className}`} onClick={(e) => handleClick(e, index)} >
+            <img src={image.src} alt={image.alt} />
+            <h3>{image.alt}</h3>
+            <div className="title_background"></div>
+          </div>
+          ))}
         </div>
       </div>
       <div className="Carousel__buttons_container">
