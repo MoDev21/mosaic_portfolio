@@ -79,15 +79,15 @@ export function EmblaCarousel() {
     }
 
     function handleScroll(event, e_index) {
-      
-      event.target.parentElement.parentElement.style.transform = `translate(${(e_index * -20) + 50}%, 0px)`;
-      console.log("scrolled ", event.target.parentElement.parentElement.style.transform);
+      const container = event.target.closest('.Carousel__container');
+      container.style.transform = `translate(${(e_index * -20) + 50}%, 0px)`;
+      console.log("scrolled ", container.style.transform);
     }
 
-    function handleScrollEnd() {
-      setTransitionStatus("Idle");
-      console.log("scroll end", event.target.parentElement.parentElement.style.transform);
-    }
+    // function handleScrollEnd() {
+    //   setTransitionStatus("Idle");
+    //   console.log("scroll end", event.target.parentElement.parentElement.style.transform);
+    // }
 
 
   return (
@@ -98,13 +98,13 @@ export function EmblaCarousel() {
         <div 
           className="Carousel__container"
           style={{
-            transform: `translate(20%, 0px)`,
+            transform: `translate(30%, 0px)`,
             transition: transitionStatus === "Idle" ? ".5s" : "none"
           }}
         >
           {diaporamaImages.map((image, index) => (
-                <div key={index} className="Image__container"  onClick={(e) => handleClick(e, index)}>
-                    <img src={image.src} alt={image.alt} className={image.className} />
+                <div key={index} className={`Image__container ${image.className}`}  onClick={(e) => handleClick(e, index)} >
+                    <img src={image.src} alt={image.alt}  />
                     <h3>{image.alt}</h3>
                 </div>
             ))}
