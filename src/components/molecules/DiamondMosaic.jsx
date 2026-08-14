@@ -9,7 +9,7 @@ const diamondImages = [
         alt: "Diamond Image 1"
     },
     {
-        src: "src\\assets\\images\\4139e2805927715ce5873dc3d84.png",
+        src: "src/assets/Portfolio/antivirus/4139e2805927715ce5873dc3d84.png",
         alt: "Diamond Image 2"
     },
     {

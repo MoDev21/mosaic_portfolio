@@ -14,19 +14,20 @@ import CountButton from '../../components/atoms/CountButton'
 import LinkButton from '../../components/atoms/LinkButton'
 import Navbar from '../../components/organisme/Navbar'
 import DiamondMosaic from '../../components/molecules/DiamondMosaic'
-import { EmblaCarousel as Carousel } from '../../components/organisme/Carousel'
+import { Carousel } from '../../components/organisme/Carousel'
 import Christianity from '../../assets/images/svg/christianity-prayer-svgrepo-com.svg'
 import Sports from '../../assets/images/svg/sports-basketball.svg'
 import Music from '../../assets/images/svg/music-notes-svgrepo-com.svg'
 import Motherboard from '../../assets/images/svg/motherboard.svg'
 import VideoGames from '../../assets/images/svg/video-games-game-controller.svg'
 import BlurBackground from '../../components/atoms/BlurBackground'
+import antivirus from '../../assets/Portfolio/antivirus/4139e2805927715ce5873dc3d84.png'
 
 
 
 
 
-export default function Home({activate_page}) {
+export default function Home({...props}) {
   const [count, setCount] = useState(0)
   const socialLinks = [
     {
@@ -93,7 +94,7 @@ export default function Home({activate_page}) {
         <div className='hero_section__container'>
           <DiamondMosaic />
           <BlurBackground className='blur-background'/>
-          <Navbar activate_page={activate_page} active_page_name="Home"/>
+          <Navbar activate_page={props.activate_page} active_page_name="Home"/>
           <div className="hero-section-content">
             <h1>Bringing imaginations into reality through GRAPHIC DESIGN</h1>
             {/* <p> 
@@ -106,14 +107,14 @@ export default function Home({activate_page}) {
 
       </section>
       <section>
-        <Carousel />
+        <Carousel activate_page={props.activate_page}/>
       </section>
 
       {/* <div className="ticks"></div> */}
       <section className="home__about_me">
         <div className="home__about_me_modalbox">
           <div className="home__about_me_modalbox_image">
-            <img src="src/assets/images/4139e2805927715ce5873dc3d84.png" alt="" />
+            <img src={antivirus} alt="" />
           </div>
           <div className="home__about_me_modalbox_info">
             <h2>About me</h2>

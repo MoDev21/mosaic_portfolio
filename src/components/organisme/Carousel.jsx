@@ -3,7 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import './Carousel.css'
 
-export function EmblaCarousel() {
+export function Carousel({...props}) {
 
     // const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [Autoplay()])
     // useEffect(() => {
@@ -15,6 +15,7 @@ export function EmblaCarousel() {
     // const goToNext = () => emblaApi?.goToNext()
 
   var diaporamaImages__container = document.querySelector(".Carousel__container");
+  // const [selected, setSelected] = React.useState(true);
     
   const [diaporamaImages, setDiaporamaImages] = React.useState([
     {
@@ -32,14 +33,14 @@ export function EmblaCarousel() {
       height: 700
     },
     {
-      src: "src\\assets\\photo-of-starry-night-1421903.jpg",
+      src: "src/assets/Portfolio/cocodelight/Prototype2 (1).png",
       alt: "Web Design",
       className: "",
       width: 300,
       height: 500
     },
     {
-      src: "src\\assets\\photo-of-starry-night-1421903.jpg",
+      src: "src/assets/Portfolio/antivirus/4139e2805927715ce5873dc3d84.png",
       alt: "Game Development",
       className: "",
       width: 300,
@@ -53,7 +54,7 @@ export function EmblaCarousel() {
       height: 500
     },
     {
-      src: "src\\assets\\photo-of-starry-night-1421903.jpg",
+      src: "src/assets/Portfolio/return-of-the-prince/prince.png",
       alt: "Animation",
       className: "",
       width: 300,
@@ -103,7 +104,7 @@ export function EmblaCarousel() {
           }}
         >
         {diaporamaImages.map((image, index) => (
-          <div key={index} className={`image__container ${image.className}`} onClick={(e) => handleClick(e, index)} >
+          <div key={index} className={`image__container ${image.className}`} onClick={(e) => image.className === "select_img" ? props.activate_page("Portfolio") : handleClick(e, index)}>
             <img src={image.src} alt={image.alt} />
             <h3>{image.alt}</h3>
             <div className="title_background"></div>

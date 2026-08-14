@@ -199,14 +199,14 @@ function InterestDiv({name}) {
 
 
 
-export default function About({activate_page}) {
+export default function About({...props}) {
     return (
         <div className='About_container'>
             <div className="about_background">
                 <div className="gradiant_screen"></div>
                 <img className='about_background__image' src='src/assets/images/Property 1=Default.png' alt="" />
             </div>
-            <Navbar activate_page={activate_page} active_page_name="About"/>
+            <Navbar activate_page={props.activate_page} active_page_name="About"/>
             <header>
                 <div className="header_content__container">
                     <h1>About Us</h1>

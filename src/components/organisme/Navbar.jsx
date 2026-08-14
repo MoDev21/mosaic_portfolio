@@ -23,7 +23,7 @@ const navigationLinks = [
 
 
 
-export default function Navbar({ activate_page, active_page_name }) {
+export default function Navbar({ ...props }) {
   const { scrollY } = useScroll();
   const backgroundColor = useTransform(
       scrollY,
@@ -73,7 +73,7 @@ export default function Navbar({ activate_page, active_page_name }) {
         />
         <ul>
             {navigationLinks.map((link, index) => (
-                <LinkButton key={index} link={link}  active={link.label === active_page_name ? true : false} activate_page={activate_page}/>
+                <LinkButton key={index} link={link}  active={link.label === props.active_page_name ? true : false} activate_page={props.activate_page}/>
             ))}
         </ul>
     </motion.nav>

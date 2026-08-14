@@ -115,7 +115,7 @@ function ModalBoxContainer({ image, onClose, onShow }) {
 
 
 
-export default function Portfolio({ activate_page }) {
+export default function Portfolio({ ...props }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -149,7 +149,7 @@ export default function Portfolio({ activate_page }) {
         ))}
       </div>
       <div className='portfolio_container'>
-        <Navbar activate_page={activate_page} active_page_name="Portfolio" />
+        <Navbar activate_page={props.activate_page} active_page_name="Portfolio" />
         <header>
           <h1>Look at my <br/>
           HANDIWORK </h1>
