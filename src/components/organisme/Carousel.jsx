@@ -1,20 +1,9 @@
 import React, { useEffect } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
 import './Carousel.css'
 
 export function Carousel({...props}) {
 
-    // const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [Autoplay()])
-    // useEffect(() => {
-    //     if (!emblaApi) return
-    //     emblaApi.plugins().autoplay?.play()
-    // }, [emblaApi])
-
-    // const goToPrev = () => emblaApi?.goToPrev()
-    // const goToNext = () => emblaApi?.goToNext()
-
-  var diaporamaImages__container = document.querySelector(".Carousel__container");
+  // var diaporamaImages__container = document.querySelector(".Carousel__container");
   // const [selected, setSelected] = React.useState(true);
     
   const [diaporamaImages, setDiaporamaImages] = React.useState([
@@ -34,7 +23,7 @@ export function Carousel({...props}) {
     },
     {
       src: "src/assets/Portfolio/cocodelight/Prototype2 (1).png",
-      alt: "Web Design",
+      alt: "UI/UX Design",
       className: "",
       width: 300,
       height: 500
@@ -62,33 +51,34 @@ export function Carousel({...props}) {
     },
   ]);
 
-  const [transitionStatus, setTransitionStatus] = React.useState("Idle");
+  // const [transitionStatus, setTransitionStatus] = React.useState("Idle");
 
     
-    function handleClick(event, e_index) {
-      console.log("clicked ", event);
-      // event.target.className = "select_img";
-      // diaporamaImages__container.style.transform = `translate(${(e_index * 20) * -1}%, 0px)`;
-      handleScroll(event, e_index)
-      setDiaporamaImages((prevImages) =>
-        prevImages.map((image, index) =>
-          index === parseInt(e_index)
-            ? { ...image, className: "select_img" }
-            : { ...image, className: "" }
-        )
-      );
-    }
+  function handleClick(event, e_index) {
+    console.log("clicked ", event.target.alt);
+    // event.target.className = "select_img";
+    // diaporamaImages__container.style.transform = `translate(${(e_index * 20) * -1}%, 0px)`;
+    handleScroll(event, e_index)
+    props.setSelectedCategory(event.target.alt)
+    setDiaporamaImages((prevImages) =>
+      prevImages.map((image, index) =>
+        index === parseInt(e_index)
+          ? { ...image, className: "select_img" }
+          : { ...image, className: "" }
+      )
+    );
+  }
 
-    function handleScroll(event, e_index) {
-      const container = event.target.closest('.Carousel__container');
-      container.style.transform = `translate(${(e_index * -20) + 50}%, 0px)`;
-      console.log("scrolled ", container.style.transform);
-    }
+  function handleScroll(event, e_index) {
+    const container = event.target.closest('.Carousel__container');
+    container.style.transform = `translate(${(e_index * -20) + 50}%, 0px)`;
+    console.log("scrolled ", container.style.transform);
+  }
 
-    // function handleScrollEnd() {
-    //   setTransitionStatus("Idle");
-    //   console.log("scroll end", event.target.parentElement.parentElement.style.transform);
-    // }
+  // function handleScrollEnd() {
+  //   setTransitionStatus("Idle");
+  //   console.log("scroll end", event.target.parentElement.parentElement.style.transform);
+  // }
 
 
   return (
@@ -104,7 +94,12 @@ export function Carousel({...props}) {
           }}
         >
         {diaporamaImages.map((image, index) => (
-          <div key={index} className={`image__container ${image.className}`} onClick={(e) => image.className === "select_img" ? props.activate_page("Portfolio") : handleClick(e, index)}>
+          <div
+            key={index}
+            className={`image__container ${image.className}`}
+            onClick={(e) => image.className === "select_img" ?
+              props.activate_page("Portfolio", image.alt) : handleClick(e, index)}
+          >
             <img src={image.src} alt={image.alt} />
             <h3>{image.alt}</h3>
             <div className="title_background"></div>

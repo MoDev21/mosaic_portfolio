@@ -30,11 +30,23 @@ function App() {
     {
       name: "Portfolio",
       component: Portfolio,
-      active: false 
+      active: false,
+      categories: [
+        'All',
+        'Web Development',
+        'Graphic Design',
+        '3D',
+        'UI/UX Design',
+        'GameDev'
+      ]
     }
   ]);
 
-  function activate_page(chosen_name) {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  function activate_page(chosen_name, categories) {
+    console.log("chosen_name ", chosen_name);
+    setSelectedCategory(categories);    
     setPages(currentPages => 
       currentPages.map(page => ({
         ...page,
@@ -43,7 +55,7 @@ function App() {
     );
   };
 
-
+  
 
   return (
     <>
@@ -51,7 +63,11 @@ function App() {
         if (page.active) {
           return (
             <div key={index}>
-              <page.component activate_page={activate_page}/>
+              <page.component
+                activate_page={activate_page}
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+              />
             </div>
           )
         }

@@ -13,9 +13,10 @@ const filterButtons = [
   { id: 'all', name: 'category', value: 'All' },
   { id: 'webDev', name: 'category', value: 'Web Development' },
   { id: 'graphicDesign', name: 'category', value: 'Graphic Design' },
-  { id: '3d', name: 'category', value: '3D' },
+  { id: '3d', name: 'category', value: '3D Modeling' },
   { id: 'UI/UXDesign', name: 'category', value: 'UI/UX Design' },
-  { id: 'GameDev', name: 'category', value: 'GameDev' },
+  { id: 'GameDev', name: 'category', value: 'Game Development' },
+  { id: 'Animation', name: 'category', value: 'Animation' },
 ]
 
 const ModalBoxData =   {
@@ -116,7 +117,7 @@ function ModalBoxContainer({ image, onClose, onShow }) {
 
 
 export default function Portfolio({ ...props }) {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  // const [selectedCategory, setSelectedCategory] = useState('All');
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState(portfolio[0])
@@ -124,7 +125,7 @@ export default function Portfolio({ ...props }) {
 
   function handleFilterChange(event) {
     console.log(event.target.value);
-    setSelectedCategory(event.target.value);
+    props.setSelectedCategory(event.target.value);
   }
 
   function handleClick(image) {
@@ -149,15 +150,15 @@ export default function Portfolio({ ...props }) {
         ))}
       </div>
       <div className='portfolio_container'>
-        <Navbar activate_page={props.activate_page} active_page_name="Portfolio" />
+        <Navbar activate_page={props.activate_page} active_page_name="Portfolio" selectedCategory={props.selectedCategory} />
         <header>
           <h1>Look at my <br/>
           HANDIWORK </h1>
           <p>Here is where you see all my work</p>
         </header>
         <div className="portfolio_content">
-          <FilterBar filterButtons={filterButtons} selectedCategory={selectedCategory} onFilterChange={handleFilterChange} />
-          <Gallery selectedCategory={selectedCategory} images={portfolio} handleClick={handleClick} />
+          <FilterBar filterButtons={filterButtons} selectedCategory={props.selectedCategory} onFilterChange={handleFilterChange} />
+          <Gallery selectedCategory={props.selectedCategory} images={portfolio} handleClick={handleClick} />
           {isModalOpen === true && <ModalBoxContainer onClose={() => setIsModalOpen(false)} image={selectedImage} />}
         </div>
       </div>

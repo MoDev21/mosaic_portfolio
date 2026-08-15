@@ -73,7 +73,7 @@ export default function Navbar({ ...props }) {
         />
         <ul>
             {navigationLinks.map((link, index) => (
-                <LinkButton key={index} link={link}  active={link.label === props.active_page_name ? true : false} activate_page={props.activate_page}/>
+                <LinkButton key={index} link={link}  active={link.label === props.active_page_name ? true : false} activate_page={props.activate_page} selectedCategory={props.selectedCategory}/>
             ))}
         </ul>
     </motion.nav>

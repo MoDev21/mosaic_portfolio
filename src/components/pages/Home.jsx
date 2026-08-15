@@ -27,8 +27,8 @@ import antivirus from '../../assets/Portfolio/antivirus/4139e2805927715ce5873dc3
 
 
 
-export default function Home({...props}) {
-  const [count, setCount] = useState(0)
+export default function Home({ ...props }) {
+  
   const socialLinks = [
     {
       href: "https://github.com/vitejs/vite",
@@ -107,7 +107,7 @@ export default function Home({...props}) {
 
       </section>
       <section>
-        <Carousel activate_page={props.activate_page}/>
+        <Carousel activate_page={props.activate_page} setSelectedCategory={props.setSelectedCategory}/>
       </section>
 
       {/* <div className="ticks"></div> */}
