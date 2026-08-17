@@ -6,6 +6,7 @@ import FilterBar from '../molecules/FilterBar'
 import Gallery from '../molecules/Gallery'
 import portfolio from '../../data/portfolio_data.json'
 import BlurBackground from '../atoms/BlurBackground'
+import ModalBoxContainer from '../organisme/ModalBoxContainer'
 
 
 
@@ -44,79 +45,42 @@ const ModalBoxData =   {
 
 const fetchedImages = import.meta.glob('../assets/images/*.{png,jpg,jpeg,svg}', { eager: true });
 
-const background_images = [
-  {
-    "id": 1,
-    "src": "src/assets/images/f4c2b316044526763b497120ae6f.jpg",
-    "className": "first_bg_image",
-    "title": "",
-  },
-  {
-    "id": 2,
-    "src": "src/assets/images/4139e2805927715ce5873dc3d84.png",
-    "className": "second_bg_image",
-    "title": "",
-  },
-  {
-    "id": 3,
-    "src": "src/assets/images/9d43e216044526763b497120ec34.jpg",
-    "className": "third_bg_image",
-    "title": "",
-  },
-  {
-    "id": 4,
-    "src": "src/assets/images/f74a2816183016363cb810c24de7.jpg",
-    "className": "fourth_bg_image",
-    "title": "",
-  },
-  {
-    "id": 5,
-    "src": "src/assets/images/873f9b16183016363cb810c26dca.jpg",
-    "className": "fifth_bg_image",
-    "title": "",
-  }
-]
-
-
-function ModalBox({ image }) {
-  const [isHideDesc, setIsHideDesc] = useState(true)
-
-  function handleShowDesc() {
-    console.log('handleShowDesc ', isHideDesc)
-    setIsHideDesc(current => !current)
-  }
-
-  return (
-    <div className='modalbox'>
-      <div className="modalbox_image">
-        <img src={image.src} alt={image.title} onClick={handleShowDesc}/>
-        <div className={"modalbox_description" + (isHideDesc ? ' modalbox_description_hide' : '')}>
-          <h3>{image.title}</h3>
-          <div className='description_container'>
-            <p>{image.description}</p>
-          </div>
-          <button className='modalbox_desc_show_button' onClick={handleShowDesc}>{isHideDesc ? 'Show' : 'Hide'}</button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function ModalBoxContainer({ image, onClose, onShow }) {
-  console.log('ModalBoxContainer ', image)
-  return (
-    <div className='modalbox_container'>
-      <button onClick={onClose}>Close</button>
-      {image.diaporama_array.map((item, index) => (
-        <ModalBox index={index} image={item} onClose={onClose} onShow={onShow} />
-      ))}
-    </div>
-  )
-}
-
-
 
 export default function Portfolio({ ...props }) {
+
+
+  const background_images = [
+    {
+      "id": 1,
+      "src": "src/assets/images/f4c2b316044526763b497120ae6f.jpg",
+      "className": "first_bg_image",
+      "title": "",
+    },
+    {
+      "id": 2,
+      "src": "src/assets/images/4139e2805927715ce5873dc3d84.png",
+      "className": "second_bg_image",
+      "title": "",
+    },
+    {
+      "id": 3,
+      "src": "src/assets/images/9d43e216044526763b497120ec34.jpg",
+      "className": "third_bg_image",
+      "title": "",
+    },
+    {
+      "id": 4,
+      "src": "src/assets/images/f74a2816183016363cb810c24de7.jpg",
+      "className": "fourth_bg_image",
+      "title": "",
+    },
+    {
+      "id": 5,
+      "src": "src/assets/images/873f9b16183016363cb810c26dca.jpg",
+      "className": "fifth_bg_image",
+      "title": "",
+    }
+  ]
   // const [selectedCategory, setSelectedCategory] = useState('All');
 
   const [isModalOpen, setIsModalOpen] = useState(false)
