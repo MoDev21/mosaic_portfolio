@@ -123,7 +123,7 @@ export default function Home({ ...props }) {
               ligula vitae consectetur vulputate, ligula ipsum placerat arcu, ut hendrerit orci augue non purus. 
               Fusce vel ex euismod, tempor sapien ut, varius nunc. 
             </p>
-            <CTAButton name="more about me"/>
+            <CTAButton name="more about me" page="About" activate_page={props.activate_page}/>
           </div>
         </div>
         <div className="hobbies_icons">

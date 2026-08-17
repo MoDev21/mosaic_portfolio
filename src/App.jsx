@@ -46,6 +46,7 @@ function App() {
 
   function activate_page(chosen_name, categories) {
     console.log("chosen_name ", chosen_name);
+    window.scrollTo(0, 0)
     setSelectedCategory(categories);    
     setPages(currentPages => 
       currentPages.map(page => ({

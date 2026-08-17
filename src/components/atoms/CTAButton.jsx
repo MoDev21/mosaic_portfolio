@@ -4,7 +4,7 @@ import './CTAButton.css'
 
 export default function CTAButton({ ...props }) {
     return (
-        <button className="CTAButton">
+        <button className="CTAButton" onClick={() => props.activate_page(props.page, 'All')}>
             {props.name}
         </button>
     )
