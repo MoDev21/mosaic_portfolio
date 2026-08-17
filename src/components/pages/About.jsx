@@ -39,7 +39,7 @@ export default function About({...props}) {
                     </div>
                 </div>
                 <div className="education__section">
-                    <h2>Education</h2>
+                    <h2>Formation</h2>
                     <div className='education__section_content'>
                       <h4>2023</h4>
                       <h3>DCS in Multimedia Integration</h3>
