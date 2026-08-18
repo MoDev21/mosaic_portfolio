@@ -7,7 +7,7 @@ import Gallery from '../molecules/Gallery'
 import portfolio from '../../data/portfolio_data.json'
 import BlurBackground from '../atoms/BlurBackground'
 import ModalBoxContainer from '../organisme/ModalBoxContainer'
-
+import CTAButton from '../atoms/CTAButton'
 
 
 const filterButtons = [
@@ -98,7 +98,18 @@ export default function Portfolio({ ...props }) {
     setIsModalOpen(true)
     console.log('setSelectedImage ')
   }
-
+  // const [fileNames, setFileNames] = useState(['src/assets/Portfolio/cocodelight']);
+  
+  // const handleAddingtoJson = async () => {
+  //   try {
+  //     const files = await import.meta.glob('../assets/Portfolio/cocodelight/*.png');
+  //     const names = Object.keys(files);
+  //     setFileNames(names);
+  //     console.log('names ', files);
+  //   } catch (err) {
+  //     console.error('Directory selection cancelled or failed:', err);
+  //   }
+  // }
 
 
 
@@ -113,6 +124,7 @@ export default function Portfolio({ ...props }) {
           </div>
         ))}
       </div>
+      {/* <button onClick={handleAddingtoJson}>Add to JSON</button>*/}
       <div className='portfolio_container'>
         <Navbar activate_page={props.activate_page} active_page_name="Portfolio" selectedCategory={props.selectedCategory} />
         <header>

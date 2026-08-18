@@ -20,5 +20,34 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       }
     ]
-  } 
+  }, 
+  {
+    "id": 2,
+    "github": "",
+    "tags": ["UI/UX Design", "Graphic Design"],
+    "diaporama_array": [
+      {
+        "title": "Coco Delight",
+        "src": "src/assets/Portfolio/cocodelight/Prototype2 (1).png",
+        "description": "This is a personal project of mine. This is a prototype of a website of my imaginary coconut drink company called Coco Delight for those who want delightful rehydration. I made this using Adobe Illustrator and Figma."
+      },
+      {
+        "title": "Creative Process",
+        "src": "src/assets/Portfolio/cocodelight/Prototype1.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "github": "",
+    "tags": ["Graphic Design"],
+    "diaporama_array": [
+      {
+        "title": "Le retour du Petit Prince",
+        "src": "src/assets/Portfolio/return-of-the-prince/prince.png",
+        "description": "This is a personal project of mine. This is a prototype of a website of my imaginary coconut drink company called Coco Delight for those who want delightful rehydration. I made this using Adobe Illustrator and Figma."
+      }
+    ]
+  }
 ]

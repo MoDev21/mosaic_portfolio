@@ -20,7 +20,7 @@ function App() {
     {
       name: "Home",
       component: Home,
-      active: true
+      active: false
     },
     {
       name: "About",
@@ -30,7 +30,7 @@ function App() {
     {
       name: "Portfolio",
       component: Portfolio,
-      active: false,
+      active: true,
       categories: [
         'All',
         'Web Development',
@@ -56,7 +56,14 @@ function App() {
     );
   };
 
-  
+  const [portfolio, setPortfolio] = useState([
+    {
+      "id": 1,
+      "github": "",
+      "tags": [],
+      "diaporama_array": []
+    }
+  ]);
 
   return (
     <>
