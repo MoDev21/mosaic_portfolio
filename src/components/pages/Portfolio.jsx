@@ -58,7 +58,7 @@ export default function Portfolio({ ...props }) {
     },
     {
       "id": 2,
-      "src": "src/assets/images/4139e2805927715ce5873dc3d84.png",
+      "src": "src/assets/Portfolio/antivirus/4139e2805927715ce5873dc3d84.png",
       "className": "second_bg_image",
       "title": "",
     },
