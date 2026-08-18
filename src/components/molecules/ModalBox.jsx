@@ -11,7 +11,7 @@ export default function ModalBox({ image, onClose, onShow }) {
   return (
     <div className='modalbox'>
       <div className="modalbox_image">
-        <img src={image.src} alt={image.title} onClick={handleShowDesc}/>
+        {image.src.endsWith('.mp4') || image.src.endsWith('.mov') ? <video src={image.src} controls /> : <img src={image.src} alt={image.title} onClick={handleShowDesc}/>}
         <div className={"modalbox_description" + (isHideDesc ? ' modalbox_description_hide' : '')}>
           <h3>{image.title}</h3>
           <div className='description_container'>

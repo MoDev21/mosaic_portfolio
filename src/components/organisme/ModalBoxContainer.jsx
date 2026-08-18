@@ -1,6 +1,7 @@
 
 import React from 'react'
 import ModalBox from '../molecules/ModalBox'
+import './ModalBoxContainer.css'
 
 
 export default function ModalBoxContainer({ image, onClose, onShow }) {

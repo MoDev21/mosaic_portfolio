@@ -47,6 +47,11 @@
         "title": "Le retour du Petit Prince",
         "src": "src/assets/Portfolio/return-of-the-prince/prince.png",
         "description": "This is a personal project of mine. This is a prototype of a website of my imaginary coconut drink company called Coco Delight for those who want delightful rehydration. I made this using Adobe Illustrator and Figma."
+      },
+      {
+        "title": "Le retour du Petit Prince",
+        "src": "src/assets/Portfolio/return-of-the-prince/Moïse_Kaseka_TP2.mp4",
+        "description": "This is a personal project of mine. This is a prototype of a website of my imaginary coconut drink company called Coco Delight for those who want delightful rehydration. I made this using Adobe Illustrator and Figma."
       }
     ]
   }
