@@ -5,6 +5,7 @@ import './ModalBoxContainer.css'
 
 
 export default function ModalBoxContainer({ image, onClose, onShow }) {
+  
   console.log('ModalBoxContainer ', image)
   return (
     <div className='modalbox_container'>
