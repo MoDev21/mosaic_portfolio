@@ -102,9 +102,9 @@
             }
 
             .modalbox_desc_show_button {
-                position: absolute;
-                left: -20%;
+                position: fixed;
                 top: 50%;
+                left: -20%;
                 background-color: #5681a7;
                 color: white;
                 height: 55px;

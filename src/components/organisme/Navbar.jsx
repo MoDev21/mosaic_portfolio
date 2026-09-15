@@ -25,6 +25,8 @@ const navigationLinks = [
 
 export default function Navbar({ ...props }) {
   const { scrollY } = useScroll();
+  const [isHome, setIsHome] = React.useState(false);
+  
   const backgroundColor = useTransform(
       scrollY,
       [0, 400],
@@ -37,11 +39,33 @@ export default function Navbar({ ...props }) {
       ['#77777700', '#7777774b']
     );
 
-  const backdropFilter= useTransform(
+  const linkBorderColor = useTransform(
+    scrollY,
+    [0, 400],
+    ['#77777700', '#7777774b']
+  );
+
+  const backdropFilter = useTransform(
     scrollY,
     [0, 400],
     ['blur(0px)', 'blur(5px)']
   );
+
+  const color = useTransform(
+    scrollY,
+    [0, 400],
+    [isHome ? '#000000' : '#FFFFFF', '#000000']
+  );
+
+  function currentPage() {
+    console.log(props.activate_page)
+    if (props.activate_page === 'home') {
+      setIsHome(true);
+      
+    } else {
+      setIsHome(false);
+    }
+  }
 
   return (
 
@@ -51,6 +75,7 @@ export default function Navbar({ ...props }) {
       borderColor,
       border: '2px solid',
       backdropFilter,
+      color,
     }}>
         {/* <motion.div
               style={{
@@ -73,7 +98,15 @@ export default function Navbar({ ...props }) {
         />
         <ul>
             {navigationLinks.map((link, index) => (
-                <LinkButton key={index} link={link}  active={link.label === props.active_page_name ? true : false} activate_page={props.activate_page} selectedCategory={props.selectedCategory}/>
+              <LinkButton
+                style={{ color: color, border: linkBorderColor }}
+                key={index}
+                link={link}
+                active={link.label === props.active_page_name ? true : false}
+                activate_page={props.activate_page}
+                selectedCategory={props.selectedCategory}
+                onClick={currentPage}
+              />
             ))}
         </ul>
     </motion.nav>

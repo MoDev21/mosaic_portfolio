@@ -6,6 +6,7 @@
   --text-h: #08060d;
   /* --bg: #b8b8b8; */
   --bg: #cacaca;
+  --bg-blur: #cacaca45; 
   --border: #000000;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
@@ -35,7 +36,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
   :root {
     --text: #ffffff;
     --text-h: #f3f4f6;
@@ -53,7 +54,7 @@
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
-}
+}*/
 
 
 

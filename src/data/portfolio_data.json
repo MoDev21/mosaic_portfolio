@@ -54,5 +54,29 @@
         "description": "This is a personal project of mine. This is a prototype of a website of my imaginary coconut drink company called Coco Delight for those who want delightful rehydration. I made this using Adobe Illustrator and Figma."
       }
     ]
+  },
+  {
+    "id": 4,
+    "github": "",
+    "tags": ["Graphic Design"],
+    "diaporama_array": [
+      {
+        "title": "Tour de france 2024",
+        "src": "src/assets/Portfolio/Tour-de-france/Tour_de_France.png",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "github": "",
+    "tags": ["Graphic Design"],
+    "diaporama_array": [
+      {
+        "title": "Brother from another mother",
+        "src": "src/assets/Portfolio/BFAM/bfamBQ.jpg",
+        "description": ""
+      }
+    ]
   }
 ]

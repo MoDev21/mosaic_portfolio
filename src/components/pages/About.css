@@ -103,6 +103,14 @@ section {
     align-content: center;
     flex-direction: column;
     gap: 20px;
+    .experiences__section_content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 15px;
+        
+    }
     .expience_container {
         display: flex;
         justify-content: center;
@@ -110,6 +118,7 @@ section {
         align-content: center;
         flex-direction: row;
         gap: 30px;
+        width: 85%;
         .experience_length {
             display: flex;
             flex-direction: column;
@@ -119,7 +128,12 @@ section {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 8px;
+            gap: 10px;
+            border: 2px solid rgba(119, 119, 119, 0.294);
+            background-color: rgba(99, 106, 113, 0.22);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: 20px;
             h3{
                 margin: 0;
             }
@@ -150,17 +164,26 @@ section {
     }
     .expertise_categories__container{
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         align-content: center;
-        justify-content: center;
-        align-items: flex-start;
+        justify-content: flex-start;
+        align-items: stretch;
         gap: 25px;
         .expertise_category__container{
             display: flex;
             flex-direction: column;
             align-content: center;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: flex-start;
+            border: 2px solid rgba(119, 119, 119, 0.294);
+            background-color: rgba(99, 106, 113, 0.22);
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            border-radius: 20px;
+            width: 25%;
+            align-items: stretch;
+            flex-wrap: wrap;
+            height: 508px;
             .expertise_category__name{
                 font-weight: 500;
                 line-height: 1.2;

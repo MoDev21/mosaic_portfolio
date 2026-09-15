@@ -8,7 +8,14 @@ import './LinkButton.css';
 const LinkButton = ({ link, active, ...props}) => {
   return (
     <li>
-        <a target="_blank" className={active === true ? 'active' : ''} onClick={() => props.activate_page(link.label, 'All')}>
+      <a
+        target="_blank"
+        className={active === true ? 'active' : ''}
+        onClick={() => props.activate_page(link.label, 'All')}
+        style={{
+          color: props.color,
+          border: props.border
+        }}>
           {link.icon && (
             <svg
               className="button-icon"

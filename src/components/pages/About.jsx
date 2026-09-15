@@ -27,7 +27,7 @@ export default function About({...props}) {
             <section>
                 <div className="about_me__section">
                     <div className="about_me__section_image">
-                        <img src="src/assets/images/4139e2805927715ce5873dc3d84.png" alt="" />
+                        <img src="src/assets/Portfolio/antivirus/4139e2805927715ce5873dc3d84.png" alt="" />
                     </div>
                     <div className="about_me__section_info">
                         <h2>About me</h2>
