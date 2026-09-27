@@ -54,18 +54,10 @@ export default function Navbar({ ...props }) {
   const color = useTransform(
     scrollY,
     [0, 400],
-    [isHome ? '#000000' : '#FFFFFF', '#000000']
+    [props.active_page_name === "Home" ? '#FFFFFF' : '#000000', '#000000']
   );
 
-  function currentPage() {
-    console.log(props.activate_page)
-    if (props.activate_page === 'home') {
-      setIsHome(true);
-      
-    } else {
-      setIsHome(false);
-    }
-  }
+
 
   return (
 
@@ -105,7 +97,6 @@ export default function Navbar({ ...props }) {
                 active={link.label === props.active_page_name ? true : false}
                 activate_page={props.activate_page}
                 selectedCategory={props.selectedCategory}
-                onClick={currentPage}
               />
             ))}
         </ul>
