@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import FilterButton from '../atoms/FilterButton'  
+import "./FilterBar.css"
 
 export default function FilterBar({ filterButtons, selectedCategory, onFilterChange }) {
     return (

@@ -1,0 +1,39 @@
+.filter_button {
+
+    input {
+        display: none;
+    }
+
+    input:checked + label {
+        border-radius: 50px;
+        border: 1px #000 solid;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        padding: .8rem 2rem;
+        border-radius: 50px;
+        border: 1px #77777700 solid;
+        transition: all 0.3s ease;
+        font-family: var(--sans);
+    }
+
+    label:hover {
+        cursor: pointer;
+        border: 1px #00000073 solid;
+    }
+}
+
+
+
+.filter_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    background-color: rgba(99, 106, 113, 0.22);;
+    border-radius: 50px;
+    border: 2px #7777774b solid;
+    gap: 20px;
+}

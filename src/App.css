@@ -119,6 +119,7 @@
 
     &:hover {
       box-shadow: var(--shadow);
+      
     }
     .button-icon {
       height: 18px;

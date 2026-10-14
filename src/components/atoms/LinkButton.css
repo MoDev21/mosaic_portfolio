@@ -16,7 +16,7 @@ a {
 
     &:hover {
         /* box-shadow: var(--shadow); */
-        border: 1px solid #ffffff3f;
+        border: 1px solid #0000003f;
         cursor: pointer;
     }
     &:active {

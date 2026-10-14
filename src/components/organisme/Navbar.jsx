@@ -42,7 +42,7 @@ export default function Navbar({ ...props }) {
   const linkBorderColor = useTransform(
     scrollY,
     [0, 400],
-    ['#77777700', '#7777774b']
+    ['#77777700', '#77777700']
   );
 
   const backdropFilter = useTransform(

@@ -46,7 +46,7 @@ section {
 }
 
 .about_me__section {
-    padding: 30px 50px;
+    /*padding: 30px 50px;*/
     display: flex;
     flex-direction: row;
     gap: 24px;
@@ -72,9 +72,12 @@ section {
         flex-direction: column;
         gap: 24px;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         h2{
             font-size: 4rem;
+        }
+        p{
+            text-align: left;
         }
     }
 }
@@ -85,6 +88,7 @@ section {
     align-items: start;
     justify-content: start;
     gap: 30px;
+    width: 100%;
     .education__section_content{
         display: flex;
         flex-direction: column;
