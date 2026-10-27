@@ -8,7 +8,7 @@ import portfolio from '../../data/portfolio_data.json'
 import BlurBackground from '../atoms/BlurBackground'
 import ModalBoxContainer from '../organisme/ModalBoxContainer'
 import CTAButton from '../atoms/CTAButton'
-
+import Footer from '../organisme/Footer'
 
 const filterButtons = [
   { id: 'all', name: 'category', value: 'All' },
@@ -138,6 +138,7 @@ export default function Portfolio({ ...props }) {
           {isModalOpen === true && <ModalBoxContainer onClose={() => setIsModalOpen(false)} image={selectedImage} />}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

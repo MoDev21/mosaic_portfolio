@@ -22,49 +22,12 @@ import Motherboard from '../../assets/images/svg/motherboard.svg'
 import VideoGames from '../../assets/images/svg/video-games-game-controller.svg'
 import BlurBackground from '../../components/atoms/BlurBackground'
 import antivirus from '../../assets/Portfolio/antivirus/4139e2805927715ce5873dc3d84.png'
-
-
+import Footer from '../organisme/Footer'
 
 
 
 export default function Home({ ...props }) {
   
-  const socialLinks = [
-    {
-      href: "https://github.com/vitejs/vite",
-      icon: "github-icon",
-      label: "GitHub"
-    },
-    {
-      href: "https://chat.vite.dev/",
-      icon: "discord-icon",
-      label: "Discord"
-    },
-    {
-      href: "https://x.com/vite_js",
-      icon: "x-icon",
-      label: "X.com"
-    },
-    {
-      href: "https://bsky.app/profile/vite.dev",
-      icon: "bluesky-icon",
-      label: "Bluesky"
-    },
-    
-  ];
-  const documentationLinks = [
-    {
-      href: "https://vite.dev/",
-      icon: "vite-icon",
-      label: "Vite Documentation"
-    },
-    {
-      href: "https://react.dev/",
-      icon: "react-icon",
-      label: "React Documentation"
-    },
-  ];
-
   const navigationLinks = [
     {
       href: "#center",
@@ -82,9 +45,6 @@ export default function Home({ ...props }) {
       label: "Next Steps"
     },
   ]
-
-
-
 
 
   return (
@@ -134,35 +94,7 @@ export default function Home({ ...props }) {
           <Sports /> */}
         </div>
       </section>
-      <footer id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            {documentationLinks.map((link, index) => (
-              <LinkButton key={index} link={link} />
-            ))}
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            {socialLinks.map((link, index) => (
-              <LinkButton key={index} link={link} />
-            ))}
-          </ul>
-        </div>
-      </footer>
-
-      {/* <div className="ticks"></div> */}
-      <section id="spacer"></section>
+      <Footer />
     </>
   );
 }

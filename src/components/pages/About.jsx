@@ -7,6 +7,7 @@ import ExpertiseCategoriesContainer from '../organisme/ExpertiseCategoriesContai
 import LanguageGrid from '../organisme/LanguageGrid'
 import SoftSkillList from '../organisme/SoftSkillList'
 import InterestDiv from '../organisme/InterestDiv'
+import Footer from '../organisme/Footer'
 
 
 
@@ -70,7 +71,8 @@ export default function About({...props}) {
                         ))}
                      </div>
                 </div>*/}
-            </section>
+        </section>
+        <Footer />
         </div>
     )
 }
