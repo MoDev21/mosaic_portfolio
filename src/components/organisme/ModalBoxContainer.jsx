@@ -40,20 +40,27 @@ export default function ModalBoxContainer({ image, onClose, onShow, ...props }) 
   
   // console.log(image)
   return (
-    <div className='modalbox_container'>
-      <button onClick={onClose}>Close</button>
-      <DescriptionContainer
-        imageDesc={modalBoxData}
-        isHideDesc={isHideDesc}
-        handleShowDesc={handleShowDesc}
-      />
-      {image.diaporama_array.map((item, index) => (
-        <ModalBox key={index} onSendData={handleModalBoxData} image={item} onClose={onClose} onShow={onShow} />
-      ))}
-      {/* {props.isImagePresent ?
-        <DescriptionContainer image={image} isHideDesc={isHideDesc} handleShowDesc={handleShowDesc} />
-      : null}*/}
-      <button className='modalbox_desc_show_button' onClick={props.handleShowDesc}>{props.isHideDesc ? 'Show' : 'Hide'}</button>
+    <div>
+      <div className='modalbox_desc_container'>
+        <DescriptionContainer
+          imageDesc={modalBoxData}
+          isHideDesc={isHideDesc}
+          handleShowDesc={handleShowDesc}
+        />
+      </div>
+      <div className='modalbox_container'>
+        <button onClick={onClose}>Close</button>
+
+        {image.diaporama_array.map((item, index) => (
+          <ModalBox key={index} onSendData={handleModalBoxData} handleShowDesc={handleShowDesc} image={item} onClose={onClose} onShow={onShow} />
+        ))}
+        {/* {props.isImagePresent ?
+          <DescriptionContainer image={image} isHideDesc={isHideDesc} handleShowDesc={handleShowDesc} />
+        : null}*/}
+
+        <button className='modalbox_desc_show_button' onClick={props.handleShowDesc}>{props.isHideDesc ? 'Show' : 'Hide'}</button>
+      </div>
     </div>
+
   )
 }

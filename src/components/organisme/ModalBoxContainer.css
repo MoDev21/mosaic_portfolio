@@ -66,3 +66,19 @@
 
     }
 }
+
+.modalbox_desc_container{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    background-color: #f0f8ff00;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
