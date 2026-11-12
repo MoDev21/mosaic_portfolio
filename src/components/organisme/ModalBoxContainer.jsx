@@ -42,6 +42,7 @@ export default function ModalBoxContainer({ image, onClose, onShow, ...props }) 
   return (
     <div>
       <div className='modalbox_desc_container'>
+        <button className='modalbox_desc_show_button' onClick={props.handleShowDesc}>{props.isHideDesc ? 'Show' : 'Hide'}</button>
         <DescriptionContainer
           imageDesc={modalBoxData}
           isHideDesc={isHideDesc}
@@ -58,7 +59,7 @@ export default function ModalBoxContainer({ image, onClose, onShow, ...props }) 
           <DescriptionContainer image={image} isHideDesc={isHideDesc} handleShowDesc={handleShowDesc} />
         : null}*/}
 
-        <button className='modalbox_desc_show_button' onClick={props.handleShowDesc}>{props.isHideDesc ? 'Show' : 'Hide'}</button>
+        
       </div>
     </div>
 

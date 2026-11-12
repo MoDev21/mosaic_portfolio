@@ -22,6 +22,7 @@ import Motherboard from '../../assets/images/svg/motherboard.svg'
 import VideoGames from '../../assets/images/svg/video-games-game-controller.svg'
 import BlurBackground from '../../components/atoms/BlurBackground'
 import antivirus from '../../assets/Portfolio/antivirus/4139e2805927715ce5873dc3d84.png'
+import KofiSection from '../organisme/KofiSection'
 import Footer from '../organisme/Footer'
 
 
@@ -93,6 +94,7 @@ export default function Home({ ...props }) {
           <Motherboard />
           <Sports /> */}
         </div>
+        <KofiSection />
       </section>
       <Footer />
     </>

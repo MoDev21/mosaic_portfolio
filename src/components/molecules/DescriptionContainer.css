@@ -26,10 +26,11 @@
         align-items: center;
         text-align: left;
         overflow-y: scroll;
-        p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-        }
+        justify-content: flex-start; /* or margin: auto on inner div so tall content scrolls correctly */
+        gap: 1em; /* or use p { margin: 0 0 1em; } p:last-child { margin-bottom: 0; } */
+        p { font-size: 1.2rem; 
+            line-height: 1.6; 
+            margin: 0; }
     }
 
 }

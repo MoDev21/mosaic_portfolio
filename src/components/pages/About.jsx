@@ -59,10 +59,10 @@ export default function About({...props}) {
                     <h2>Language</h2>
                     <LanguageGrid />
                 </div>
-                <div className="soft_skills__section">
+                {/* <div className="soft_skills__section">
                     <h2>Soft Skills</h2>
                     <SoftSkillList />
-                </div>
+                </div>*/}
                 {/* <div className="interest__section">
                      <h2>Interest</h2>
                      <div className="interest__list">
