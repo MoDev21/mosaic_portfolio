@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import Navbar from '../organisme/Navbar'
 import ExpienceContainer from '../molecules/ExperianceContainer'
 import './About.css'
@@ -12,32 +12,76 @@ import Footer from '../organisme/Footer'
 
 
 export default function About({...props}) {
+    const [isMobile, setIsMobile] = useState(false)
+    const [isTablet, setIsTablet] = useState(false)
+
+    useEffect(() => {
+        const mobileQuery = window.matchMedia('(max-width: 768px)')
+        const tabletQuery = window.matchMedia('(min-width: 769px) and (max-width: 1024px)')
+
+        const updateBreakpoints = () => {
+            setIsMobile(mobileQuery.matches)
+            setIsTablet(tabletQuery.matches)
+        }
+
+        updateBreakpoints()
+        mobileQuery.addEventListener('change', updateBreakpoints)
+        tabletQuery.addEventListener('change', updateBreakpoints)
+
+        return () => {
+            mobileQuery.removeEventListener('change', updateBreakpoints)
+            tabletQuery.removeEventListener('change', updateBreakpoints)
+        }
+    }, [])
+
+    const isCompactLayout = isMobile || isTablet
+
+    const aboutMeImage = (
+        <div className="about_me__section_image">
+            <img src="src/assets/Portfolio/antivirus/4139e2805927715ce5873dc3d84.png" alt="Portrait" />
+        </div>
+    )
+
+    const aboutMeInfo = (
+        <div className="about_me__section_info">
+            <h2>About me</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt diam ac turpis tristique, ac sagittis justo tristique. Nullam cursus,
+                ligula vitae consectetur vulputate, ligula ipsum placerat arcu, ut hendrerit orci augue non purus.
+                Fusce vel ex euismod, tempor sapien ut, varius nunc.
+            </p>
+        </div>
+    )
+
     return (
         <div className='About_container'>
             <div className="about_background">
                 <div className="gradiant_screen"></div>
+                {/* {!isMobile && (
+                    <img className='about_background__image' src='src/assets/images/Property 1=Default.png' alt="" />
+                )} */}
                 <img className='about_background__image' src='src/assets/images/Property 1=Default.png' alt="" />
             </div>
             <Navbar activate_page={props.activate_page} active_page_name="About"/>
             <header>
                 <div className="header_content__container">
                     <h1>About Us</h1>
-                    <p>Welcome to our about page!</p>
+                    <p>{isMobile ? 'Learn more about my background and skills.' : 'Welcome to our about page!'}</p>
                 </div>
             </header>
             <section>
                 <div className="about_me__section">
-                    <div className="about_me__section_image">
-                        <img src="src/assets/Portfolio/antivirus/4139e2805927715ce5873dc3d84.png" alt="" />
-                    </div>
-                    <div className="about_me__section_info">
-                        <h2>About me</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt diam ac turpis tristique, ac sagittis justo tristique. Nullam cursus,
-                            ligula vitae consectetur vulputate, ligula ipsum placerat arcu, ut hendrerit orci augue non purus.
-                            Fusce vel ex euismod, tempor sapien ut, varius nunc.
-                        </p>
-                    </div>
+                    {isCompactLayout ? (
+                        <>
+                            {aboutMeInfo}
+                            {aboutMeImage}
+                        </>
+                    ) : (
+                        <>
+                            {aboutMeImage}
+                            {aboutMeInfo}
+                        </>
+                    )}
                 </div>
                 <div className="education__section">
                     <h2>Formation</h2>

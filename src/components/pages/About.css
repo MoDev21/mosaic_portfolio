@@ -113,7 +113,8 @@ section {
         align-items: center;
         justify-content: start;
         gap: 15px;
-        
+        /* Tablet */
+
     }
     .expience_container {
         display: flex;
@@ -167,13 +168,19 @@ section {
         transform: rotate(180deg);
     }
     .expertise_categories__container{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-content: center;
-        justify-content: flex-start;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         gap: 25px;
+        /* Tablet */
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        /* Desktop */
+        @media (min-width: 768px) and (max-width: 1400px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
         .expertise_category__container{
             display: flex;
             flex-direction: column;
@@ -184,7 +191,7 @@ section {
             backdrop-filter: blur(5px);
             padding: 10px;
             border-radius: 20px;
-            width: 25%;
+            width: auto;
             align-items: stretch;
             flex-wrap: wrap;
             height: 508px;
@@ -218,5 +225,158 @@ section {
     width: 100%;
     h2{
         font-size: 3rem;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    header {
+        height: auto;
+        min-height: 60dvh;
+        padding: 16px;
+    }
+
+    section {
+        gap: 120px;
+        width: 100%;
+        padding: 0 24px;
+        box-sizing: border-box;
+    }
+
+    .about_me__section {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        width: 100%;
+    }
+
+    .about_me__section .about_me__section_image {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        padding: 0;
+        aspect-ratio: 1 / 1;
+    }
+
+    .about_me__section .about_me__section_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about_me__section .about_me__section_info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .about_me__section .about_me__section_info h2 {
+        font-size: 3rem;
+    }
+
+    .about_me__section .about_me__section_info p {
+        text-align: center;
+    }
+
+    .education__section {
+        align-items: center;
+        text-align: center;
+    }
+
+    .education__section .education__section_content {
+        align-items: center;
+    }
+
+    .experiences__section .expience_container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 16px;
+    }
+
+    .experiences__section .expience_container .experience_info_container {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .expertise__section {
+        flex-direction: column;
+        margin: 64px 0;
+        gap: 24px;
+    }
+
+    .expertise__section h2 {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 3rem;
+    }
+
+    .expertise__section .expertise_categories__container .expertise_category__container {
+        height: auto;
+        min-height: 320px;
+    }
+
+    .lauguage__grid {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+
+    .language__section h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    header {
+        min-height: 50dvh;
+        padding: 12px;
+    }
+
+    header .header_content__container h1 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        gap: 72px;
+        padding: 0 16px;
+    }
+
+    .about_me__section .about_me__section_image {
+        max-width: 280px;
+    }
+
+    .about_me__section .about_me__section_info h2 {
+        font-size: 2.25rem;
+    }
+
+    .education__section {
+        gap: 20px;
+    }
+
+    .experiences__section h2,
+    .expertise__section h2,
+    .language__section h2 {
+        font-size: 2rem;
+    }
+
+    .experiences__section .expience_container .experience_info_container {
+        padding: 16px;
+    }
+
+    .expertise__section .expertise_categories__container {
+        gap: 16px;
+    }
+
+    .expertise__section .expertise_categories__container .expertise_category__container {
+        min-height: auto;
+        padding: 16px;
+    }
+
+    .expertise__section .expertise_categories__container .expertise_category__container .expertise_category__list .expertise_category__list_item {
+        font-size: 1.1rem;
+    }
+
+    .language__section h2 {
+        font-size: 2rem;
     }
 }

@@ -1,8 +1,9 @@
-import React from "react";
+import {useEffect, useState} from "react";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import mosaiclogo from '../../assets/mosaic_logo.png';
 import LinkButton from "../atoms/LinkButton";
-import "./Navbar.css"
+import "./Navbar.css";
+
 const navigationLinks = [
     {
       href: "#Home",
@@ -25,8 +26,12 @@ const navigationLinks = [
 
 export default function Navbar({ ...props }) {
   const { scrollY } = useScroll();
-  const [isHome, setIsHome] = React.useState(false);
-  
+  const [isHome, setIsHome] = useState(false);
+
+  const [isMobile, setIsMobile] = useState(false)
+  const [isTablet, setIsTablet] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const isCompact = isMobile || isTablet
   const backgroundColor = useTransform(
       scrollY,
       [0, 400],
@@ -57,49 +62,110 @@ export default function Navbar({ ...props }) {
     [props.active_page_name === "Home" ? '#FFFFFF' : '#000000', '#000000']
   );
 
+  useEffect(() => {
+      const mobileQuery = window.matchMedia('(max-width: 768px)')
+      const tabletQuery = window.matchMedia('(min-width: 769px) and (max-width: 1024px)')
+
+      const updateBreakpoints = () => {
+          setIsMobile(mobileQuery.matches)
+          setIsTablet(tabletQuery.matches)
+      }
+
+      updateBreakpoints()
+      mobileQuery.addEventListener('change', updateBreakpoints)
+      tabletQuery.addEventListener('change', updateBreakpoints)
+
+      return () => {
+          mobileQuery.removeEventListener('change', updateBreakpoints)
+          tabletQuery.removeEventListener('change', updateBreakpoints)
+      }
+  }, [])
+
+  useEffect(() => {
+      if (!isCompact) {
+          setMenuOpen(false)
+      }
+  }, [isCompact])
+
+  const handleNavClick = (page) => {
+      if (props.activate_page) {
+          props.activate_page(page)
+      }
+      setMenuOpen(false)
+  }
+
 
 
   return (
 
 
-    <motion.nav style={{
-      backgroundColor,
-      borderColor,
-      border: '2px solid',
-      backdropFilter,
-      color,
-    }}>
-        {/* <motion.div
-              style={{
-                opacity,
-                position: 'fixed',
-                top: '20px',
-                left: '20px',
-                padding: '20px',
-                backgroundColor: '#3b82f6',
-                color: 'white',
-                borderRadius: '8px',
-              }}
-            >
-              I fade out as you scroll down!
-        </motion.div>*/}
-        <img
-            src={mosaiclogo}
-            alt="Mosaic logo"
-            style={{ height: '40px' }}
-        />
-        <ul>
-            {navigationLinks.map((link, index) => (
-              <LinkButton
-                style={{ color: color, border: linkBorderColor }}
-                key={index}
-                link={link}
-                active={link.label === props.active_page_name ? true : false}
-                activate_page={props.activate_page}
-                selectedCategory={props.selectedCategory}
-              />
-            ))}
-        </ul>
-    </motion.nav>
+    <nav
+      className={`navbar ${menuOpen ? 'navbar--open' : ''}`}
+
+    >
+      <motion.div
+        className="navbar__bar"
+        style={{
+          backgroundColor,
+          borderColor,
+          border: '2px solid',
+          backdropFilter,
+          color,
+        }}
+      >
+          <img
+              src={mosaiclogo}
+              alt="Mosaic logo"
+              style={{ height: '40px' }}
+          />
+
+          {isCompact ? (
+              <button
+                type="button"
+                className={`navbar__hamburger ${menuOpen ? 'is-open' : ''}`}
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={menuOpen}
+                aria-controls="navbar-menu"
+                onClick={() => setMenuOpen((open) => !open)}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+          ) : (
+              <ul className="navbar__links">
+                {navigationLinks.map((link, index) => (
+                  <LinkButton
+                    style={{ color: color, border: linkBorderColor }}
+                    key={index}
+                    link={link}
+                    active={link.label === props.active_page_name}
+                    activate_page={props.activate_page}
+                    selectedCategory={props.selectedCategory}
+                  />
+                ))}
+              </ul>
+          )}
+        </motion.div>
+
+      {isCompact && menuOpen && (
+          <div className="navbar__links_container">
+            <ul id="navbar-menu" className="navbar__links navbar__links--mobile">
+              {navigationLinks.map((link, index) => (
+                <li key={index} className="navbar__mobile_item">
+                  <button
+                    type="button"
+                    className={`navbar__mobile_link ${link.label === props.active_page_name ? 'is-active' : ''}`}
+                    onClick={() => handleNavClick(link.label)}
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        )}
+    </nav>
   );
 }
