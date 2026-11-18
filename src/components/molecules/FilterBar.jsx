@@ -35,7 +35,7 @@ export default function FilterBar({ filterButtons, selectedCategory, onFilterCha
   }, [isCompact])
   
   return (
-    <div className={`filter_bar${isCompact ? '--mobile' : ''} ${menuOpen ? 'filter_bar--mobile--open' : ''}`}>
+    <div className={`filter_bar${isCompact ? '--mobile' : ''} ${menuOpen ? 'filter_bar--mobile--open' : 'filter_bar--mobile--close'}`}>
       {/* generate the filter buttons based on the filterButtons array */}
       <button
         type="button"

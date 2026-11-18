@@ -104,13 +104,17 @@
     gap: 20px;
     position: fixed;
     top: 20%;
-    right: -25dvh;
+    right: 0;
     z-index: 1;
     transition: .5s;
 }
 
 .filter_bar--mobile--open {
-    animation: open_filter_menu .5S forwards;
+    right: 0;
+}
+
+.filter_bar--mobile--close {
+    right: -25dvh;
 }
 
 @keyframes open_filter_menu {
